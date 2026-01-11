@@ -4,7 +4,7 @@ name: Fetch Snow Data
 
 on:
   schedule:
-    - cron: '35 * * * *'
+    - cron: '20,50 * * * *'
   workflow_dispatch:
 
 jobs:
