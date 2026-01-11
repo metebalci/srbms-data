@@ -1,0 +1,1996 @@
+{
+  "timestamp": "2026-01-11T13:12:05.280622+00:00",
+  "terrain_bounds_lv95": {
+    "minX": 2479900,
+    "maxX": 2865100,
+    "minY": 1061900,
+    "maxY": 1302100
+  },
+  "slf": {
+    "source": "SLF IMIS",
+    "api_url": "https://measurement-api.slf.ch/public/api/imis/stations",
+    "station_count": 126,
+    "stations_with_data": 126,
+    "stations": [
+      {
+        "code": "DAV2",
+        "label": "B\u00e4rent\u00e4lli",
+        "canton": "GR",
+        "lv95X": 2782062.0,
+        "lv95Y": 1174726.0,
+        "elevation": 2558.0,
+        "snowDepth": 69.59,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "MUT2",
+        "label": "Mutten",
+        "canton": "GL",
+        "lv95X": 2720390.0,
+        "lv95Y": 1190946.9,
+        "elevation": 2481.0,
+        "snowDepth": 113.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "TUM2",
+        "label": "Val Miez",
+        "canton": "GR",
+        "lv95X": 2720868.0,
+        "lv95Y": 1182317.9,
+        "elevation": 2191.0,
+        "snowDepth": 83.1,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GLA2",
+        "label": "Guppen",
+        "canton": "GL",
+        "lv95X": 2721610.0,
+        "lv95Y": 1206301.9,
+        "elevation": 1632.0,
+        "snowDepth": 156.4,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GAN2",
+        "label": "Gandegg",
+        "canton": "VS",
+        "lv95X": 2624747.9,
+        "lv95Y": 1142041.0,
+        "elevation": 2710.0,
+        "snowDepth": 225.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GOR2",
+        "label": "Gornergratsee",
+        "canton": "VS",
+        "lv95X": 2626730.9,
+        "lv95Y": 1092906.1,
+        "elevation": 2953.0,
+        "snowDepth": 80.4,
+        "measureDate": "2026-01-10T23:00:00Z"
+      },
+      {
+        "code": "VAL2",
+        "label": "Vallascia",
+        "canton": "TI",
+        "lv95X": 2690125.9,
+        "lv95Y": 1155979.9,
+        "elevation": 2268.0,
+        "snowDepth": 82.3,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BEL2",
+        "label": "Belalp",
+        "canton": "VS",
+        "lv95X": 2641189.9,
+        "lv95Y": 1138305.0,
+        "elevation": 2554.0,
+        "snowDepth": 125.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "TAM3",
+        "label": "Schaft\u00e4li",
+        "canton": "SG",
+        "lv95X": 2753893.9,
+        "lv95Y": 1195298.9,
+        "elevation": 2166.0,
+        "snowDepth": 80.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ILI2",
+        "label": "Les Collines",
+        "canton": "VS",
+        "lv95X": 2552841.1,
+        "lv95Y": 1115728.0,
+        "elevation": 2022.0,
+        "snowDepth": 76.5,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "GOS2",
+        "label": "Rientall\u00fccke",
+        "canton": "UR",
+        "lv95X": 2691294.9,
+        "lv95Y": 1169808.9,
+        "elevation": 2325.0,
+        "snowDepth": 7.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ROT3",
+        "label": "Plang Bi",
+        "canton": "GR",
+        "lv95X": 2765518.0,
+        "lv95Y": 1178052.9,
+        "elevation": 2495.0,
+        "snowDepth": 71.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "FUL2",
+        "label": "Grand Cor",
+        "canton": "VS",
+        "lv95X": 2573059.0,
+        "lv95Y": 1115974.1,
+        "elevation": 2602.0,
+        "snowDepth": 177.7,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "FRA2",
+        "label": "Efra",
+        "canton": "TI",
+        "lv95X": 2708905.9,
+        "lv95Y": 1132852.9,
+        "elevation": 2100.0,
+        "snowDepth": 42.97,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SMN2",
+        "label": "Ravaischer Salaas",
+        "canton": "GR",
+        "lv95X": 2820670.8,
+        "lv95Y": 1204667.2,
+        "elevation": 2512.0,
+        "snowDepth": 60.16,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "VLS2",
+        "label": "Alp Calasa",
+        "canton": "GR",
+        "lv95X": 2735165.9,
+        "lv95Y": 1170763.9,
+        "elevation": 2064.0,
+        "snowDepth": 37.74,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "NEN3",
+        "label": "Combatzeline",
+        "canton": "VS",
+        "lv95X": 2592014.0,
+        "lv95Y": 1110194.1,
+        "elevation": 2203.0,
+        "snowDepth": 67.95,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ADE2",
+        "label": "Engstligenalp",
+        "canton": "BE",
+        "lv95X": 2611067.0,
+        "lv95Y": 1142568.0,
+        "elevation": 2304.0,
+        "snowDepth": 115.1,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GRA2",
+        "label": "Loz",
+        "canton": "VS",
+        "lv95X": 2549569.1,
+        "lv95Y": 1132953.0,
+        "elevation": 1984.0,
+        "snowDepth": 65.23,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "CAM2",
+        "label": "Fontane",
+        "canton": "TI",
+        "lv95X": 2698227.9,
+        "lv95Y": 1146843.9,
+        "elevation": 2216.0,
+        "snowDepth": 83.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SCH2",
+        "label": "T\u00fcrliboden",
+        "canton": "BE",
+        "lv95X": 2630363.0,
+        "lv95Y": 1158481.0,
+        "elevation": 2332.0,
+        "snowDepth": 171.5,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "KLT4",
+        "label": "Schiiterb\u00f6den",
+        "canton": "GL",
+        "lv95X": 2717621.8,
+        "lv95Y": 1211846.0,
+        "elevation": 1745.0,
+        "snowDepth": 117.1,
+        "measureDate": "2026-01-11T12:00:00Z"
+      },
+      {
+        "code": "JUL2",
+        "label": "Vairana",
+        "canton": "GR",
+        "lv95X": 2773049.0,
+        "lv95Y": 1149948.9,
+        "elevation": 2426.0,
+        "snowDepth": 72.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ROA2",
+        "label": "Rotschalp",
+        "canton": "BE",
+        "lv95X": 2642412.0,
+        "lv95Y": 1180499.0,
+        "elevation": 1875.0,
+        "snowDepth": 93.6,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "TIT2",
+        "label": "Titlisboden",
+        "canton": "OW",
+        "lv95X": 2674132.0,
+        "lv95Y": 1182106.9,
+        "elevation": 2149.0,
+        "snowDepth": 122.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "CON2",
+        "label": "Etang de Trente Pas",
+        "canton": "VS",
+        "lv95X": 2587328.0,
+        "lv95Y": 1126494.0,
+        "elevation": 2229.0,
+        "snowDepth": 181.3,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GOM2",
+        "label": "Bodmerchumma",
+        "canton": "VS",
+        "lv95X": 2661028.9,
+        "lv95Y": 1141320.0,
+        "elevation": 2439.0,
+        "snowDepth": 67.03,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "STN2",
+        "label": "Oberer Stelligletscher",
+        "canton": "VS",
+        "lv95X": 2624090.9,
+        "lv95Y": 1112974.1,
+        "elevation": 2914.0,
+        "snowDepth": 92.3,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "CMA2",
+        "label": "La Fuorcla",
+        "canton": "GR",
+        "lv95X": 2733073.0,
+        "lv95Y": 1189893.9,
+        "elevation": 2325.0,
+        "snowDepth": 83.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "LAU2",
+        "label": "Tr\u00fcttlisbergpass",
+        "canton": "BE",
+        "lv95X": 2595482.0,
+        "lv95Y": 1141633.0,
+        "elevation": 1970.0,
+        "snowDepth": 78.3,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "AMD2",
+        "label": "B\u00e4renfall",
+        "canton": "SG",
+        "lv95X": 2729500.0,
+        "lv95Y": 1225839.9,
+        "elevation": 1610.0,
+        "snowDepth": 88.1,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "KLO3",
+        "label": "Gatschiefer",
+        "canton": "GR",
+        "lv95X": 2790140.9,
+        "lv95Y": 1190813.0,
+        "elevation": 2299.0,
+        "snowDepth": 106.6,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BOR2",
+        "label": "Bortelsee",
+        "canton": "VS",
+        "lv95X": 2651681.9,
+        "lv95Y": 1126789.0,
+        "elevation": 2517.0,
+        "snowDepth": 152.1,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "OBW2",
+        "label": "Jostsee",
+        "canton": "VS",
+        "lv95X": 2667289.9,
+        "lv95Y": 1155257.0,
+        "elevation": 2432.0,
+        "snowDepth": 105.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "CHA3",
+        "label": "Col de Bretaye",
+        "canton": "VD",
+        "lv95X": 2571898.3,
+        "lv95Y": 1130488.0,
+        "elevation": 1780.0,
+        "snowDepth": 91.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "DTR2",
+        "label": "Preda",
+        "canton": "TI",
+        "lv95X": 2709713.9,
+        "lv95Y": 1155618.9,
+        "elevation": 2057.0,
+        "snowDepth": 41.45,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SHE2",
+        "label": "Schibe",
+        "canton": "BE",
+        "lv95X": 2628564.0,
+        "lv95Y": 1177583.0,
+        "elevation": 1852.0,
+        "snowDepth": 95.1,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "VIN2",
+        "label": "Alpetta",
+        "canton": "GR",
+        "lv95X": 2828724.7,
+        "lv95Y": 1202232.3,
+        "elevation": 2729.0,
+        "snowDepth": 73.6,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "FLU2",
+        "label": "Fl\u00fcelapass",
+        "canton": "GR",
+        "lv95X": 2791581.9,
+        "lv95Y": 1181009.0,
+        "elevation": 2394.0,
+        "snowDepth": 34.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "MAE2",
+        "label": "Itramen",
+        "canton": "BE",
+        "lv95X": 2638673.9,
+        "lv95Y": 1163168.0,
+        "elevation": 2162.0,
+        "snowDepth": 77.25,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "VSC2",
+        "label": "Trigl",
+        "canton": "GR",
+        "lv95X": 2822635.9,
+        "lv95Y": 1181650.2,
+        "elevation": 2914.0,
+        "snowDepth": 76.0,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "DAV3",
+        "label": "Hanengretji",
+        "canton": "GR",
+        "lv95X": 2778291.9,
+        "lv95Y": 1184615.9,
+        "elevation": 2455.0,
+        "snowDepth": 94.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "KES2",
+        "label": "Porta d'Es-cha",
+        "canton": "GR",
+        "lv95X": 2788351.0,
+        "lv95Y": 1166289.0,
+        "elevation": 2727.0,
+        "snowDepth": 67.52,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SCB2",
+        "label": "Sch\u00f6nb\u00fcel",
+        "canton": "OW",
+        "lv95X": 2650770.0,
+        "lv95Y": 1181126.0,
+        "elevation": 1777.0,
+        "snowDepth": 169.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SPN2",
+        "label": "Ze Seewe",
+        "canton": "VS",
+        "lv95X": 2652381.9,
+        "lv95Y": 1120004.0,
+        "elevation": 2620.0,
+        "snowDepth": 0.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "TUJ3",
+        "label": "Nual",
+        "canton": "GR",
+        "lv95X": 2699640.9,
+        "lv95Y": 1167024.9,
+        "elevation": 2211.0,
+        "snowDepth": 70.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BED3",
+        "label": "Cassinello",
+        "canton": "TI",
+        "lv95X": 2683168.9,
+        "lv95Y": 1149444.9,
+        "elevation": 2101.0,
+        "snowDepth": 110.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ZER2",
+        "label": "Triftchumme",
+        "canton": "VS",
+        "lv95X": 2622353.9,
+        "lv95Y": 1099001.1,
+        "elevation": 2752.0,
+        "snowDepth": 110.1,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BER2",
+        "label": "Motta Bianca",
+        "canton": "GR",
+        "lv95X": 2799121.1,
+        "lv95Y": 1144312.0,
+        "elevation": 2447.0,
+        "snowDepth": 54.61,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "NAS2",
+        "label": "Schliv\u00e8ra",
+        "canton": "GR",
+        "lv95X": 2814919.9,
+        "lv95Y": 1188734.2,
+        "elevation": 2350.0,
+        "snowDepth": 41.72,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "VIA2",
+        "label": "Teststation Viano",
+        "canton": "GR",
+        "lv95X": 2810324.6,
+        "lv95Y": 1127019.9,
+        "elevation": 2355.0,
+        "snowDepth": 41.98,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ELS2",
+        "label": "Elsige",
+        "canton": "BE",
+        "lv95X": 2615575.0,
+        "lv95Y": 1153165.0,
+        "elevation": 2143.0,
+        "snowDepth": 41.48,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ELM2",
+        "label": "Ch\u00fcebodensee",
+        "canton": "GL",
+        "lv95X": 2729279.0,
+        "lv95Y": 1199677.9,
+        "elevation": 2058.0,
+        "snowDepth": 124.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "FNH2",
+        "label": "L'Ecreuleuse",
+        "canton": "VS",
+        "lv95X": 2563303.1,
+        "lv95Y": 1105584.1,
+        "elevation": 2252.0,
+        "snowDepth": 217.3,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "GOM3",
+        "label": "Treichbode",
+        "canton": "VS",
+        "lv95X": 2660648.9,
+        "lv95Y": 1148952.0,
+        "elevation": 2427.0,
+        "snowDepth": 100.9,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "CHA2",
+        "label": "Pierres Fendues",
+        "canton": "VD",
+        "lv95X": 2578868.0,
+        "lv95Y": 1136214.0,
+        "elevation": 2218.0,
+        "snowDepth": 157.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "TAM2",
+        "label": "Wildsee",
+        "canton": "SG",
+        "lv95X": 2748557.0,
+        "lv95Y": 1203768.9,
+        "elevation": 2468.0,
+        "snowDepth": 108.4,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "LAG3",
+        "label": "Materdell",
+        "canton": "GR",
+        "lv95X": 2773641.0,
+        "lv95Y": 1143963.9,
+        "elevation": 2300.0,
+        "snowDepth": 42.52,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "FAE2",
+        "label": "F\u00e4rmel",
+        "canton": "BE",
+        "lv95X": 2604344.0,
+        "lv95Y": 1152125.0,
+        "elevation": 1971.0,
+        "snowDepth": 102.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BOV2",
+        "label": "Pointe de Toules",
+        "canton": "VS",
+        "lv95X": 2584389.0,
+        "lv95Y": 1092601.1,
+        "elevation": 2687.0,
+        "snowDepth": 101.6,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "VDS2",
+        "label": "Donin du Jour",
+        "canton": "VS",
+        "lv95X": 2594521.0,
+        "lv95Y": 1130015.0,
+        "elevation": 2385.0,
+        "snowDepth": 188.1,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "OBW3",
+        "label": "M\u00e4llige",
+        "canton": "VS",
+        "lv95X": 2670292.9,
+        "lv95Y": 1151137.9,
+        "elevation": 2194.0,
+        "snowDepth": 102.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "KLO2",
+        "label": "Madrisa",
+        "canton": "GR",
+        "lv95X": 2785498.9,
+        "lv95Y": 1198213.0,
+        "elevation": 2147.0,
+        "snowDepth": 72.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SPN3",
+        "label": "Wenghorn",
+        "canton": "VS",
+        "lv95X": 2646836.9,
+        "lv95Y": 1114241.0,
+        "elevation": 2424.0,
+        "snowDepth": 119.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "YBR2",
+        "label": "Wanne",
+        "canton": "SZ",
+        "lv95X": 2705399.0,
+        "lv95Y": 1210310.9,
+        "elevation": 1701.0,
+        "snowDepth": 93.8,
+        "measureDate": "2026-01-11T12:00:00Z"
+      },
+      {
+        "code": "OFE2",
+        "label": "Murtar\u00f6l",
+        "canton": "GR",
+        "lv95X": 2818233.0,
+        "lv95Y": 1168460.2,
+        "elevation": 2359.0,
+        "snowDepth": 47.47,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "TUJ2",
+        "label": "Culmatsch",
+        "canton": "GR",
+        "lv95X": 2698312.9,
+        "lv95Y": 1171099.9,
+        "elevation": 2262.0,
+        "snowDepth": 80.9,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "URS2",
+        "label": "Giltnasen",
+        "canton": "UR",
+        "lv95X": 2682404.9,
+        "lv95Y": 1160065.9,
+        "elevation": 2169.0,
+        "snowDepth": 43.79,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "PAR2",
+        "label": "Kreuzweg",
+        "canton": "GR",
+        "lv95X": 2780435.9,
+        "lv95Y": 1191674.9,
+        "elevation": 2290.0,
+        "snowDepth": 100.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "FUS2",
+        "label": "Alpe di R\u00f6d",
+        "canton": "TI",
+        "lv95X": 2690824.9,
+        "lv95Y": 1143469.9,
+        "elevation": 2390.0,
+        "snowDepth": 111.9,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SAA2",
+        "label": "Seetal",
+        "canton": "VS",
+        "lv95X": 2634035.9,
+        "lv95Y": 1113469.0,
+        "elevation": 2480.0,
+        "snowDepth": 41.06,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SIM2",
+        "label": "Piano del Simano",
+        "canton": "TI",
+        "lv95X": 2718449.9,
+        "lv95Y": 1147399.9,
+        "elevation": 2450.0,
+        "snowDepth": 54.6,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "WFJ2",
+        "label": "Weissfluhjoch",
+        "canton": "GR",
+        "lv95X": 2780848.9,
+        "lv95Y": 1189230.9,
+        "elevation": 2536.0,
+        "snowDepth": 111.4,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GUT2",
+        "label": "Homad",
+        "canton": "BE",
+        "lv95X": 2665113.9,
+        "lv95Y": 1170140.0,
+        "elevation": 2115.0,
+        "snowDepth": 38.65,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SCA2",
+        "label": "Seewli",
+        "canton": "UR",
+        "lv95X": 2697589.0,
+        "lv95Y": 1185438.9,
+        "elevation": 2032.0,
+        "snowDepth": 52.19,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "HTR3",
+        "label": "Unter Surettasee",
+        "canton": "GR",
+        "lv95X": 2746499.9,
+        "lv95Y": 1155699.9,
+        "elevation": 2200.0,
+        "snowDepth": 26.18,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "PUZ2",
+        "label": "Ils Plauns",
+        "canton": "GR",
+        "lv95X": 2709038.9,
+        "lv95Y": 1164888.9,
+        "elevation": 2196.0,
+        "snowDepth": 50.36,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ANV3",
+        "label": "Tracuit",
+        "canton": "VS",
+        "lv95X": 2616832.9,
+        "lv95Y": 1107764.1,
+        "elevation": 2589.0,
+        "snowDepth": 58.15,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ARO2",
+        "label": "Les Fontanesses",
+        "canton": "VS",
+        "lv95X": 2600558.0,
+        "lv95Y": 1097471.1,
+        "elevation": 2847.0,
+        "snowDepth": 104.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SAA4",
+        "label": "Gibidum",
+        "canton": "VS",
+        "lv95X": 2636088.9,
+        "lv95Y": 1108215.1,
+        "elevation": 2680.0,
+        "snowDepth": 61.5,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "DIA2",
+        "label": "Tsanfleuron",
+        "canton": "VD",
+        "lv95X": 2584779.0,
+        "lv95Y": 1129353.0,
+        "elevation": 2569.0,
+        "snowDepth": 195.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ANV2",
+        "label": "Orzival",
+        "canton": "VS",
+        "lv95X": 2607468.0,
+        "lv95Y": 1115206.1,
+        "elevation": 2640.0,
+        "snowDepth": 136.5,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ENG2",
+        "label": "Fitteren",
+        "canton": "GL",
+        "lv95X": 2733168.0,
+        "lv95Y": 1206120.9,
+        "elevation": 2162.0,
+        "snowDepth": 96.7,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "JAU2",
+        "label": "Fochsen",
+        "canton": "FR",
+        "lv95X": 2587434.0,
+        "lv95Y": 1164658.0,
+        "elevation": 1707.0,
+        "snowDepth": 120.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "STH2",
+        "label": "Vorderstocken",
+        "canton": "BE",
+        "lv95X": 2606198.0,
+        "lv95Y": 1170095.0,
+        "elevation": 1791.0,
+        "snowDepth": 129.1,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "CSL2",
+        "label": "Col du Chasseral",
+        "canton": "BE",
+        "lv95X": 2569089.9,
+        "lv95Y": 1218450.0,
+        "elevation": 1455.0,
+        "snowDepth": 47.19,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ALI2",
+        "label": "Chenau",
+        "canton": "FR",
+        "lv95X": 2565806.0,
+        "lv95Y": 1148688.0,
+        "elevation": 1708.0,
+        "snowDepth": 91.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "KLT3",
+        "label": "Ruoggis, Unter Stafel",
+        "canton": "GL",
+        "lv95X": 2716336.8,
+        "lv95Y": 1209976.3,
+        "elevation": 1258.0,
+        "snowDepth": 47.1,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BER3",
+        "label": "Puoz Bass",
+        "canton": "GR",
+        "lv95X": 2790343.1,
+        "lv95Y": 1146291.0,
+        "elevation": 2625.0,
+        "snowDepth": 38.63,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "LHO2",
+        "label": "Russisprung",
+        "canton": "BE",
+        "lv95X": 2638714.9,
+        "lv95Y": 1159182.0,
+        "elevation": 2150.0,
+        "snowDepth": 35.42,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "VRG3",
+        "label": "Porcaresc",
+        "canton": "TI",
+        "lv95X": 2679931.8,
+        "lv95Y": 1121523.0,
+        "elevation": 2038.0,
+        "snowDepth": 71.18,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "MUN2",
+        "label": "Chiematte",
+        "canton": "VS",
+        "lv95X": 2637465.9,
+        "lv95Y": 1131413.0,
+        "elevation": 2205.0,
+        "snowDepth": 106.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "LAG2",
+        "label": "Tscheppa",
+        "canton": "GR",
+        "lv95X": 2777150.0,
+        "lv95Y": 1147049.9,
+        "elevation": 2730.0,
+        "snowDepth": 76.5,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "BEV2",
+        "label": "Valetta",
+        "canton": "GR",
+        "lv95X": 2783955.0,
+        "lv95Y": 1157063.9,
+        "elevation": 2512.0,
+        "snowDepth": 62.25,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ARO3",
+        "label": "Br\u00e9ona",
+        "canton": "VS",
+        "lv95X": 2609545.9,
+        "lv95Y": 1103997.1,
+        "elevation": 2602.0,
+        "snowDepth": 63.48,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "MES2",
+        "label": "Pian Grand",
+        "canton": "GR",
+        "lv95X": 2732362.9,
+        "lv95Y": 1141746.9,
+        "elevation": 2384.0,
+        "snowDepth": 59.01,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GOS3",
+        "label": "G\u00fctsch",
+        "canton": "UR",
+        "lv95X": 2689424.9,
+        "lv95Y": 1167907.9,
+        "elevation": 2209.0,
+        "snowDepth": 71.6,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "GAD2",
+        "label": "Gschletteregg",
+        "canton": "BE",
+        "lv95X": 2673273.0,
+        "lv95Y": 1177446.9,
+        "elevation": 2063.0,
+        "snowDepth": 101.4,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "LUK2",
+        "label": "Lai Verd",
+        "canton": "GR",
+        "lv95X": 2703036.9,
+        "lv95Y": 1162314.9,
+        "elevation": 2555.0,
+        "snowDepth": 116.9,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SCA3",
+        "label": "Alpler Tor",
+        "canton": "UR",
+        "lv95X": 2702186.0,
+        "lv95Y": 1194252.9,
+        "elevation": 2338.0,
+        "snowDepth": 121.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "MEI2",
+        "label": "Laucheren",
+        "canton": "UR",
+        "lv95X": 2685005.0,
+        "lv95Y": 1177554.9,
+        "elevation": 2220.0,
+        "snowDepth": 112.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BOG2",
+        "label": "Hendar Furggu",
+        "canton": "TI",
+        "lv95X": 2679537.9,
+        "lv95Y": 1131901.9,
+        "elevation": 2299.0,
+        "snowDepth": 40.22,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "MUO2",
+        "label": "Rupperslaui",
+        "canton": "SZ",
+        "lv95X": 2699515.0,
+        "lv95Y": 1199397.9,
+        "elevation": 2083.0,
+        "snowDepth": 167.2,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "RNZ3",
+        "label": "Rienzenstock",
+        "canton": "UR",
+        "lv95X": 2690831.5,
+        "lv95Y": 1171083.0,
+        "elevation": 2390.0,
+        "snowDepth": 72.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "FOU2",
+        "label": "Glacier de l'Evole",
+        "canton": "VS",
+        "lv95X": 2571210.1,
+        "lv95Y": 1091200.1,
+        "elevation": 2800.0,
+        "snowDepth": 166.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "FIS2",
+        "label": "Fisi",
+        "canton": "BE",
+        "lv95X": 2618068.0,
+        "lv95Y": 1146709.0,
+        "elevation": 2155.0,
+        "snowDepth": 75.6,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "FIR2",
+        "label": "Schmidigen-Bidmeren",
+        "canton": "BE",
+        "lv95X": 2647887.0,
+        "lv95Y": 1168807.0,
+        "elevation": 2111.0,
+        "snowDepth": 105.6,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ALB2",
+        "label": "Teststation Albula",
+        "canton": "GR",
+        "lv95X": 2783748.0,
+        "lv95Y": 1161660.0,
+        "elevation": 2322.0,
+        "snowDepth": 13.79,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "BED4",
+        "label": "Sabbioni",
+        "canton": "TI",
+        "lv95X": 2681159.9,
+        "lv95Y": 1153249.9,
+        "elevation": 2305.0,
+        "snowDepth": 137.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "OTT2",
+        "label": "Ottere",
+        "canton": "BE",
+        "lv95X": 2609435.0,
+        "lv95Y": 1154275.0,
+        "elevation": 2017.0,
+        "snowDepth": 126.5,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "NAR2",
+        "label": "Bassa di Nara",
+        "canton": "TI",
+        "lv95X": 2709822.9,
+        "lv95Y": 1147851.9,
+        "elevation": 2077.0,
+        "snowDepth": 21.46,
+        "measureDate": "2026-01-11T12:30:00Z"
+      },
+      {
+        "code": "BIN4",
+        "label": "Schapleralpa",
+        "canton": "VS",
+        "lv95X": 2659300.9,
+        "lv95Y": 1133273.0,
+        "elevation": 2354.0,
+        "snowDepth": 119.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ELA2",
+        "label": "Tschitta",
+        "canton": "GR",
+        "lv95X": 2774403.0,
+        "lv95Y": 1162546.9,
+        "elevation": 2726.0,
+        "snowDepth": 89.9,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SAA5",
+        "label": "M\u00e4lliga",
+        "canton": "VS",
+        "lv95X": 2641949.9,
+        "lv95Y": 1108588.0,
+        "elevation": 2952.0,
+        "snowDepth": 89.4,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "SLF2",
+        "label": "Davos Stilli (SLF)",
+        "canton": "GR",
+        "lv95X": 2783878.9,
+        "lv95Y": 1187447.0,
+        "elevation": 1563.0,
+        "snowDepth": 40.56,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "MTR2",
+        "label": "Predanass",
+        "canton": "TI",
+        "lv95X": 2713716.9,
+        "lv95Y": 1140778.9,
+        "elevation": 1884.0,
+        "snowDepth": 17.93,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "EGH2",
+        "label": "Flesch",
+        "canton": "VS",
+        "lv95X": 2650209.9,
+        "lv95Y": 1140815.0,
+        "elevation": 2500.0,
+        "snowDepth": 81.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ORT2",
+        "label": "Ortstock Matt",
+        "canton": "GL",
+        "lv95X": 2715769.0,
+        "lv95Y": 1197451.9,
+        "elevation": 1824.0,
+        "snowDepth": 152.7,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "TRU2",
+        "label": "Trubelboden",
+        "canton": "VS",
+        "lv95X": 2611306.0,
+        "lv95Y": 1135519.0,
+        "elevation": 2459.0,
+        "snowDepth": 204.8,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ATT2",
+        "label": "Lac des Vaux",
+        "canton": "VS",
+        "lv95X": 2586953.0,
+        "lv95Y": 1105990.1,
+        "elevation": 2550.0,
+        "snowDepth": 137.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ZNZ2",
+        "label": "P\u00fclschezza",
+        "canton": "GR",
+        "lv95X": 2797312.0,
+        "lv95Y": 1175078.0,
+        "elevation": 2677.0,
+        "snowDepth": 96.0,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "OBM2",
+        "label": "Obere Meiel",
+        "canton": "BE",
+        "lv95X": 2582760.0,
+        "lv95Y": 1141183.0,
+        "elevation": 2097.0,
+        "snowDepth": 163.3,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "ZER4",
+        "label": "Stafelalp",
+        "canton": "VS",
+        "lv95X": 2620433.9,
+        "lv95Y": 1094082.1,
+        "elevation": 2408.0,
+        "snowDepth": 76.5,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "HTR2",
+        "label": "Alp Pi\u00e4netsch",
+        "canton": "GR",
+        "lv95X": 2735421.9,
+        "lv95Y": 1156310.9,
+        "elevation": 2147.0,
+        "snowDepth": 38.17,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "PMA2",
+        "label": "Colms da Parsonz",
+        "canton": "GR",
+        "lv95X": 2760854.0,
+        "lv95Y": 1160906.9,
+        "elevation": 2429.0,
+        "snowDepth": 50.29,
+        "measureDate": "2026-01-11T13:00:00Z"
+      },
+      {
+        "code": "DAV6",
+        "label": "Luksch Alp",
+        "canton": "GR",
+        "lv95X": 2787263.9,
+        "lv95Y": 1184196.0,
+        "elevation": 2290.0,
+        "snowDepth": 66.96,
+        "measureDate": "2026-01-11T12:30:00Z"
+      }
+    ]
+  },
+  "meteoswiss": {
+    "source": "MeteoSwiss SwissMetNet",
+    "api_url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-smn",
+    "station_count": 71,
+    "stations_with_data": 70,
+    "stations": [
+      {
+        "code": "ABO",
+        "label": "Adelboden",
+        "canton": "BE",
+        "lv95X": 2609372.0,
+        "lv95Y": 1148939.0,
+        "elevation": 1321,
+        "snowDepth": 20,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "AIG",
+        "label": "Aigle",
+        "canton": "VD",
+        "lv95X": 2560404.0,
+        "lv95Y": 1130713.0,
+        "elevation": 381,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "ALT",
+        "label": "Altdorf",
+        "canton": "UR",
+        "lv95X": 2690181.0,
+        "lv95Y": 1193564.0,
+        "elevation": 438,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "AND",
+        "label": "Andeer",
+        "canton": "GR",
+        "lv95X": 2752692.0,
+        "lv95Y": 1164038.0,
+        "elevation": 987,
+        "snowDepth": 3,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "ARH",
+        "label": "Altenrhein",
+        "canton": "SG",
+        "lv95X": 2760387.0,
+        "lv95Y": 1261382.0,
+        "elevation": 398,
+        "snowDepth": 1,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "BAS",
+        "label": "Basel / Binningen",
+        "canton": "BL",
+        "lv95X": 2610909.0,
+        "lv95Y": 1265612.0,
+        "elevation": 316,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "BER",
+        "label": "Bern / Zollikofen",
+        "canton": "BE",
+        "lv95X": 2601934.0,
+        "lv95Y": 1204410.0,
+        "elevation": 553,
+        "snowDepth": 3,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "BIA",
+        "label": "Biasca",
+        "canton": "TI",
+        "lv95X": 2718535.0,
+        "lv95Y": 1132792.0,
+        "elevation": 278,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "BLA",
+        "label": "Blatten, L\u00f6tschental",
+        "canton": "VS",
+        "lv95X": 2629776.0,
+        "lv95Y": 1141283.0,
+        "elevation": 1538,
+        "snowDepth": null,
+        "measureDate": null
+      },
+      {
+        "code": "BOL",
+        "label": "Boltigen",
+        "canton": "BE",
+        "lv95X": 2595831.0,
+        "lv95Y": 1163587.0,
+        "elevation": 820,
+        "snowDepth": 18,
+        "measureDate": "11.01.2026 12:40"
+      },
+      {
+        "code": "CDF",
+        "label": "La Chaux-de-Fonds",
+        "canton": "NE",
+        "lv95X": 2550919.0,
+        "lv95Y": 1214862.0,
+        "elevation": 1017,
+        "snowDepth": 32,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "CDM",
+        "label": "Col des Mosses",
+        "canton": "VD",
+        "lv95X": 2573817.0,
+        "lv95Y": 1137853.0,
+        "elevation": 1412,
+        "snowDepth": 57,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "CGI",
+        "label": "Nyon / Changins",
+        "canton": "VD",
+        "lv95X": 2506878.0,
+        "lv95Y": 1139574.0,
+        "elevation": 458,
+        "snowDepth": 1,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "CHA",
+        "label": "Chasseral",
+        "canton": "BE",
+        "lv95X": 2570845.0,
+        "lv95Y": 1220158.0,
+        "elevation": 1594,
+        "snowDepth": 30,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "CHB",
+        "label": "Les Charbonni\u00e8res",
+        "canton": "VD",
+        "lv95X": 2513821.0,
+        "lv95Y": 1169388.0,
+        "elevation": 1045,
+        "snowDepth": 25,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "CHD",
+        "label": "Ch\u00e2teau-d'Oex",
+        "canton": "VD",
+        "lv95X": 2577040.0,
+        "lv95Y": 1147655.0,
+        "elevation": 1028,
+        "snowDepth": 25,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "CHU",
+        "label": "Chur",
+        "canton": "GR",
+        "lv95X": 2759485.0,
+        "lv95Y": 1193176.0,
+        "elevation": 556,
+        "snowDepth": 8,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "CHZ",
+        "label": "Cham",
+        "canton": "ZG",
+        "lv95X": 2677759.0,
+        "lv95Y": 1226878.0,
+        "elevation": 443,
+        "snowDepth": 5,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "DAV",
+        "label": "Davos",
+        "canton": "GR",
+        "lv95X": 2783519.0,
+        "lv95Y": 1187459.0,
+        "elevation": 1594,
+        "snowDepth": 43,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "DEM",
+        "label": "Del\u00e9mont",
+        "canton": "JU",
+        "lv95X": 2593270.0,
+        "lv95Y": 1244543.0,
+        "elevation": 439,
+        "snowDepth": 8,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "DIS",
+        "label": "Disentis",
+        "canton": "GR",
+        "lv95X": 2708191.0,
+        "lv95Y": 1173793.0,
+        "elevation": 1197,
+        "snowDepth": 26,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "DOL",
+        "label": "La D\u00f4le",
+        "canton": "VD",
+        "lv95X": 2497059.0,
+        "lv95Y": 1142373.0,
+        "elevation": 1670,
+        "snowDepth": 46,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "EBK",
+        "label": "Ebnat-Kappel",
+        "canton": "SG",
+        "lv95X": 2726348.0,
+        "lv95Y": 1237176.0,
+        "elevation": 623,
+        "snowDepth": 32,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "ENG",
+        "label": "Engelberg",
+        "canton": "OW",
+        "lv95X": 2674162.0,
+        "lv95Y": 1186069.0,
+        "elevation": 1036,
+        "snowDepth": 21,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "FAH",
+        "label": "Fahy",
+        "canton": "JU",
+        "lv95X": 2562465.0,
+        "lv95Y": 1252676.0,
+        "elevation": 596,
+        "snowDepth": 16,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "FRE",
+        "label": "Bullet / La Fr\u00e9taz",
+        "canton": "VD",
+        "lv95X": 2534225.0,
+        "lv95Y": 1188082.0,
+        "elevation": 1205,
+        "snowDepth": 18,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "FRU",
+        "label": "Frutigen",
+        "canton": "BE",
+        "lv95X": 2616773.0,
+        "lv95Y": 1160884.0,
+        "elevation": 756,
+        "snowDepth": 18,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "GOE",
+        "label": "G\u00f6sgen",
+        "canton": "SO",
+        "lv95X": 2640422.0,
+        "lv95Y": 1245949.0,
+        "elevation": 380,
+        "snowDepth": 3,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "GRA",
+        "label": "Fribourg / Grangeneuve",
+        "canton": "FR",
+        "lv95X": 2575184.0,
+        "lv95Y": 1180076.0,
+        "elevation": 651,
+        "snowDepth": 6,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "GRE",
+        "label": "Grenchen",
+        "canton": "SO",
+        "lv95X": 2598219.0,
+        "lv95Y": 1225350.0,
+        "elevation": 428,
+        "snowDepth": 2,
+        "measureDate": "11.01.2026 12:40"
+      },
+      {
+        "code": "GRH",
+        "label": "Grimsel Hospiz",
+        "canton": "BE",
+        "lv95X": 2668583.0,
+        "lv95Y": 1158215.0,
+        "elevation": 1980,
+        "snowDepth": 122,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "GUE",
+        "label": "G\u00fctsch, Andermatt",
+        "canton": "UR",
+        "lv95X": 2690087.0,
+        "lv95Y": 1167480.0,
+        "elevation": 2286,
+        "snowDepth": 51,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "GVE",
+        "label": "Gen\u00e8ve / Cointrin",
+        "canton": "GE",
+        "lv95X": 2498904.0,
+        "lv95Y": 1122632.0,
+        "elevation": 411,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "HOE",
+        "label": "H\u00f6rnli",
+        "canton": "ZH",
+        "lv95X": 2713517.0,
+        "lv95Y": 1247756.0,
+        "elevation": 1133,
+        "snowDepth": 19,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "ILZ",
+        "label": "Ilanz",
+        "canton": "GR",
+        "lv95X": 2735686.0,
+        "lv95Y": 1181965.0,
+        "elevation": 698,
+        "snowDepth": 17,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "INT",
+        "label": "Interlaken",
+        "canton": "BE",
+        "lv95X": 2633043.0,
+        "lv95Y": 1169070.0,
+        "elevation": 578,
+        "snowDepth": 13,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "KLO",
+        "label": "Z\u00fcrich / Kloten",
+        "canton": "ZH",
+        "lv95X": 2682711.0,
+        "lv95Y": 1259339.0,
+        "elevation": 426,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "KOP",
+        "label": "Koppigen",
+        "canton": "BE",
+        "lv95X": 2612663.0,
+        "lv95Y": 1218665.0,
+        "elevation": 485,
+        "snowDepth": 3,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "LUZ",
+        "label": "Luzern",
+        "canton": "LU",
+        "lv95X": 2665545.0,
+        "lv95Y": 1209850.0,
+        "elevation": 454,
+        "snowDepth": 9,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "MAG",
+        "label": "Magadino / Cadenazzo",
+        "canton": "TI",
+        "lv95X": 2715480.0,
+        "lv95Y": 1113161.0,
+        "elevation": 203,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "MAS",
+        "label": "Marsens",
+        "canton": "FR",
+        "lv95X": 2571758.0,
+        "lv95Y": 1167317.0,
+        "elevation": 715,
+        "snowDepth": 16,
+        "measureDate": "11.01.2026 12:40"
+      },
+      {
+        "code": "MER",
+        "label": "Meiringen",
+        "canton": "BE",
+        "lv95X": 2655844.0,
+        "lv95Y": 1175930.0,
+        "elevation": 589,
+        "snowDepth": 6,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "MLS",
+        "label": "Le Mol\u00e9son",
+        "canton": "FR",
+        "lv95X": 2567718.0,
+        "lv95Y": 1155077.0,
+        "elevation": 1974,
+        "snowDepth": 16,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "MOB",
+        "label": "Montagnier, Bagnes",
+        "canton": "VS",
+        "lv95X": 2583491.0,
+        "lv95Y": 1102189.0,
+        "elevation": 839,
+        "snowDepth": 10,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "MUB",
+        "label": "M\u00fchleberg",
+        "canton": "BE",
+        "lv95X": 2587793.0,
+        "lv95Y": 1202480.0,
+        "elevation": 480,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "NAP",
+        "label": "Napf",
+        "canton": "BE",
+        "lv95X": 2638137.0,
+        "lv95Y": 1206079.0,
+        "elevation": 1404,
+        "snowDepth": 54,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "ORO",
+        "label": "Oron",
+        "canton": "VD",
+        "lv95X": 2555505.0,
+        "lv95Y": 1158053.0,
+        "elevation": 828,
+        "snowDepth": 9,
+        "measureDate": "11.01.2026 12:40"
+      },
+      {
+        "code": "OTL",
+        "label": "Locarno / Monti",
+        "canton": "TI",
+        "lv95X": 2704167.0,
+        "lv95Y": 1114316.0,
+        "elevation": 367,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "PAY",
+        "label": "Payerne",
+        "canton": "VD",
+        "lv95X": 2562131.0,
+        "lv95Y": 1184612.0,
+        "elevation": 490,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "PIO",
+        "label": "Piotta",
+        "canton": "TI",
+        "lv95X": 2695881.0,
+        "lv95Y": 1152264.0,
+        "elevation": 990,
+        "snowDepth": 12,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "PLF",
+        "label": "Plaffeien",
+        "canton": "FR",
+        "lv95X": 2586828.0,
+        "lv95Y": 1177407.0,
+        "elevation": 1042,
+        "snowDepth": 15,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "REH",
+        "label": "Z\u00fcrich / Affoltern",
+        "canton": "ZH",
+        "lv95X": 2681433.0,
+        "lv95Y": 1253548.0,
+        "elevation": 444,
+        "snowDepth": 4,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "ROB",
+        "label": "Poschiavo / Robbia",
+        "canton": "GR",
+        "lv95X": 2801994.0,
+        "lv95Y": 1136249.0,
+        "elevation": 1078,
+        "snowDepth": 1,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "RUE",
+        "label": "R\u00fcnenberg",
+        "canton": "BL",
+        "lv95X": 2633253.0,
+        "lv95Y": 1253846.0,
+        "elevation": 611,
+        "snowDepth": 11,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SAM",
+        "label": "Samedan",
+        "canton": "GR",
+        "lv95X": 2787251.0,
+        "lv95Y": 1155685.0,
+        "elevation": 1709,
+        "snowDepth": 19,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SBE",
+        "label": "S. Bernardino",
+        "canton": "GR",
+        "lv95X": 2734116.0,
+        "lv95Y": 1147294.0,
+        "elevation": 1639,
+        "snowDepth": 13,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SBO",
+        "label": "Stabio",
+        "canton": "TI",
+        "lv95X": 2716049.0,
+        "lv95Y": 1077972.0,
+        "elevation": 351,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SCU",
+        "label": "Scuol",
+        "canton": "GR",
+        "lv95X": 2817139.0,
+        "lv95Y": 1186393.0,
+        "elevation": 1304,
+        "snowDepth": 13,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SHA",
+        "label": "Schaffhausen",
+        "canton": "SH",
+        "lv95X": 2688704.0,
+        "lv95Y": 1282803.0,
+        "elevation": 438,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SIM",
+        "label": "Simplon-Dorf",
+        "canton": "VS",
+        "lv95X": 2647683.0,
+        "lv95Y": 1116340.0,
+        "elevation": 1465,
+        "snowDepth": 1,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SIO",
+        "label": "Sion",
+        "canton": "VS",
+        "lv95X": 2591633.0,
+        "lv95Y": 1118584.0,
+        "elevation": 482,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "SMA",
+        "label": "Z\u00fcrich / Fluntern",
+        "canton": "ZH",
+        "lv95X": 2685118.0,
+        "lv95Y": 1248066.0,
+        "elevation": 556,
+        "snowDepth": 20,
+        "measureDate": "11.01.2026 12:50"
+      },
+      {
+        "code": "SPF",
+        "label": "Sch\u00fcpfheim",
+        "canton": "LU",
+        "lv95X": 2643684.0,
+        "lv95Y": 1199711.0,
+        "elevation": 744,
+        "snowDepth": 12,
+        "measureDate": "11.01.2026 12:40"
+      },
+      {
+        "code": "STG",
+        "label": "St. Gallen",
+        "canton": "SG",
+        "lv95X": 2747866.0,
+        "lv95Y": 1254588.0,
+        "elevation": 776,
+        "snowDepth": 16,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "TAE",
+        "label": "Aadorf / T\u00e4nikon",
+        "canton": "TG",
+        "lv95X": 2710518.0,
+        "lv95Y": 1259824.0,
+        "elevation": 539,
+        "snowDepth": 9,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "THU",
+        "label": "Thun",
+        "canton": "BE",
+        "lv95X": 2611201.0,
+        "lv95Y": 1177640.0,
+        "elevation": 570,
+        "snowDepth": 5,
+        "measureDate": "11.01.2026 12:40"
+      },
+      {
+        "code": "ULR",
+        "label": "Ulrichen",
+        "canton": "VS",
+        "lv95X": 2666748.0,
+        "lv95Y": 1150767.0,
+        "elevation": 1346,
+        "snowDepth": 68,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "VEV",
+        "label": "Vevey / Corseaux",
+        "canton": "VD",
+        "lv95X": 2552106.0,
+        "lv95Y": 1146847.0,
+        "elevation": 405,
+        "snowDepth": 0,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "VIT",
+        "label": "Villars-Tiercelin",
+        "canton": "VD",
+        "lv95X": 2544198.0,
+        "lv95Y": 1163651.0,
+        "elevation": 859,
+        "snowDepth": 5,
+        "measureDate": "11.01.2026 12:40"
+      },
+      {
+        "code": "WAE",
+        "label": "W\u00e4denswil",
+        "canton": "ZH",
+        "lv95X": 2693848.0,
+        "lv95Y": 1230744.0,
+        "elevation": 485,
+        "snowDepth": 14,
+        "measureDate": "11.01.2026 13:00"
+      },
+      {
+        "code": "ZER",
+        "label": "Zermatt",
+        "canton": "VS",
+        "lv95X": 2624298.0,
+        "lv95Y": 1097574.0,
+        "elevation": 1638,
+        "snowDepth": 35,
+        "measureDate": "11.01.2026 13:00"
+      }
+    ]
+  },
+  "voronoi_hash": "0ce9f8b803065b0b"
+}
