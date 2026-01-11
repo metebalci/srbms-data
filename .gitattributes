@@ -1,0 +1,2 @@
+public/*.bin filter=lfs diff=lfs merge=lfs -text
+public/*.json filter=lfs diff=lfs merge=lfs -text
