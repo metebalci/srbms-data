@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-11T14:41:15.598678+00:00",
+  "timestamp": "2026-01-11T15:40:28.686333+00:00",
   "terrain_bounds_lv95": {
     "minX": 2479900,
     "maxX": 2865100,
@@ -19,8 +19,8 @@
         "lv95X": 2782062.0,
         "lv95Y": 1174726.0,
         "elevation": 2558.0,
-        "snowDepth": 71.2,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 73.1,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "MUT2",
@@ -29,8 +29,8 @@
         "lv95X": 2720390.0,
         "lv95Y": 1190946.9,
         "elevation": 2481.0,
-        "snowDepth": 112.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 111.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "TUM2",
@@ -39,8 +39,8 @@
         "lv95X": 2720868.0,
         "lv95Y": 1182317.9,
         "elevation": 2191.0,
-        "snowDepth": 91.9,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 89.4,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GLA2",
@@ -49,8 +49,8 @@
         "lv95X": 2721610.0,
         "lv95Y": 1206301.9,
         "elevation": 1632.0,
-        "snowDepth": 153.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 155.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GAN2",
@@ -59,8 +59,8 @@
         "lv95X": 2624747.9,
         "lv95Y": 1142041.0,
         "elevation": 2710.0,
-        "snowDepth": 223.3,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 225.0,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GOR2",
@@ -79,8 +79,8 @@
         "lv95X": 2690125.9,
         "lv95Y": 1155979.9,
         "elevation": 2268.0,
-        "snowDepth": 81.8,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 81.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BEL2",
@@ -89,8 +89,8 @@
         "lv95X": 2641189.9,
         "lv95Y": 1138305.0,
         "elevation": 2554.0,
-        "snowDepth": 128.8,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 130.0,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "TAM3",
@@ -99,8 +99,8 @@
         "lv95X": 2753893.9,
         "lv95Y": 1195298.9,
         "elevation": 2166.0,
-        "snowDepth": 79.9,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 79.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ILI2",
@@ -109,8 +109,8 @@
         "lv95X": 2552841.1,
         "lv95Y": 1115728.0,
         "elevation": 2022.0,
-        "snowDepth": 76.5,
-        "measureDate": "2026-01-11T12:30:00Z"
+        "snowDepth": 76.9,
+        "measureDate": "2026-01-11T13:00:00Z"
       },
       {
         "code": "GOS2",
@@ -119,8 +119,8 @@
         "lv95X": 2691294.9,
         "lv95Y": 1169808.9,
         "elevation": 2325.0,
-        "snowDepth": 7.8,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 7.0,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ROT3",
@@ -129,8 +129,8 @@
         "lv95X": 2765518.0,
         "lv95Y": 1178052.9,
         "elevation": 2495.0,
-        "snowDepth": 68.84,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 69.76,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "FUL2",
@@ -139,8 +139,8 @@
         "lv95X": 2573059.0,
         "lv95Y": 1115974.1,
         "elevation": 2602.0,
-        "snowDepth": 176.7,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 177.6,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "FRA2",
@@ -149,8 +149,8 @@
         "lv95X": 2708905.9,
         "lv95Y": 1132852.9,
         "elevation": 2100.0,
-        "snowDepth": 43.58,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 43.23,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SMN2",
@@ -159,8 +159,8 @@
         "lv95X": 2820670.8,
         "lv95Y": 1204667.2,
         "elevation": 2512.0,
-        "snowDepth": 60.44,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 61.28,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "VLS2",
@@ -169,8 +169,8 @@
         "lv95X": 2735165.9,
         "lv95Y": 1170763.9,
         "elevation": 2064.0,
-        "snowDepth": 37.71,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 37.17,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "NEN3",
@@ -179,8 +179,8 @@
         "lv95X": 2592014.0,
         "lv95Y": 1110194.1,
         "elevation": 2203.0,
-        "snowDepth": 67.51,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 68.58,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ADE2",
@@ -189,8 +189,8 @@
         "lv95X": 2611067.0,
         "lv95Y": 1142568.0,
         "elevation": 2304.0,
-        "snowDepth": 114.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 113.8,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GRA2",
@@ -199,8 +199,8 @@
         "lv95X": 2549569.1,
         "lv95Y": 1132953.0,
         "elevation": 1984.0,
-        "snowDepth": 64.39,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 67.38,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "CAM2",
@@ -209,8 +209,8 @@
         "lv95X": 2698227.9,
         "lv95Y": 1146843.9,
         "elevation": 2216.0,
-        "snowDepth": 82.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 82.2,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SCH2",
@@ -219,8 +219,8 @@
         "lv95X": 2630363.0,
         "lv95Y": 1158481.0,
         "elevation": 2332.0,
-        "snowDepth": 172.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 174.2,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "KLT4",
@@ -229,8 +229,8 @@
         "lv95X": 2717621.8,
         "lv95Y": 1211846.0,
         "elevation": 1745.0,
-        "snowDepth": 116.6,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 115.9,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "JUL2",
@@ -239,8 +239,8 @@
         "lv95X": 2773049.0,
         "lv95Y": 1149948.9,
         "elevation": 2426.0,
-        "snowDepth": 44.32,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 46.04,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ROA2",
@@ -249,8 +249,8 @@
         "lv95X": 2642412.0,
         "lv95Y": 1180499.0,
         "elevation": 1875.0,
-        "snowDepth": 102.1,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 103.1,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "TIT2",
@@ -259,8 +259,8 @@
         "lv95X": 2674132.0,
         "lv95Y": 1182106.9,
         "elevation": 2149.0,
-        "snowDepth": 124.8,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 124.3,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "CON2",
@@ -269,8 +269,8 @@
         "lv95X": 2587328.0,
         "lv95Y": 1126494.0,
         "elevation": 2229.0,
-        "snowDepth": 182.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 182.0,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GOM2",
@@ -279,8 +279,8 @@
         "lv95X": 2661028.9,
         "lv95Y": 1141320.0,
         "elevation": 2439.0,
-        "snowDepth": 67.97,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 67.46,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "STN2",
@@ -289,8 +289,8 @@
         "lv95X": 2624090.9,
         "lv95Y": 1112974.1,
         "elevation": 2914.0,
-        "snowDepth": 92.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 92.0,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "CMA2",
@@ -299,8 +299,8 @@
         "lv95X": 2733073.0,
         "lv95Y": 1189893.9,
         "elevation": 2325.0,
-        "snowDepth": 84.5,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 84.3,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "LAU2",
@@ -309,8 +309,8 @@
         "lv95X": 2595482.0,
         "lv95Y": 1141633.0,
         "elevation": 1970.0,
-        "snowDepth": 77.2,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 80.0,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "AMD2",
@@ -319,8 +319,8 @@
         "lv95X": 2729500.0,
         "lv95Y": 1225839.9,
         "elevation": 1610.0,
-        "snowDepth": 86.1,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 87.2,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "KLO3",
@@ -329,8 +329,8 @@
         "lv95X": 2790140.9,
         "lv95Y": 1190813.0,
         "elevation": 2299.0,
-        "snowDepth": 109.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 109.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BOR2",
@@ -339,8 +339,8 @@
         "lv95X": 2651681.9,
         "lv95Y": 1126789.0,
         "elevation": 2517.0,
-        "snowDepth": 152.9,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 150.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "OBW2",
@@ -349,8 +349,8 @@
         "lv95X": 2667289.9,
         "lv95Y": 1155257.0,
         "elevation": 2432.0,
-        "snowDepth": 105.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 106.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "CHA3",
@@ -359,8 +359,8 @@
         "lv95X": 2571898.3,
         "lv95Y": 1130488.0,
         "elevation": 1780.0,
-        "snowDepth": 93.1,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 94.3,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "DTR2",
@@ -369,8 +369,8 @@
         "lv95X": 2709713.9,
         "lv95Y": 1155618.9,
         "elevation": 2057.0,
-        "snowDepth": 40.77,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 42.47,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SHE2",
@@ -379,8 +379,8 @@
         "lv95X": 2628564.0,
         "lv95Y": 1177583.0,
         "elevation": 1852.0,
-        "snowDepth": 97.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 96.8,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "VIN2",
@@ -389,8 +389,8 @@
         "lv95X": 2828724.7,
         "lv95Y": 1202232.3,
         "elevation": 2729.0,
-        "snowDepth": 74.0,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 73.9,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "FLU2",
@@ -399,8 +399,8 @@
         "lv95X": 2791581.9,
         "lv95Y": 1181009.0,
         "elevation": 2394.0,
-        "snowDepth": 41.1,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 41.88,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "MAE2",
@@ -409,8 +409,8 @@
         "lv95X": 2638673.9,
         "lv95Y": 1163168.0,
         "elevation": 2162.0,
-        "snowDepth": 77.63,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 77.36,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "VSC2",
@@ -419,8 +419,8 @@
         "lv95X": 2822635.9,
         "lv95Y": 1181650.2,
         "elevation": 2914.0,
-        "snowDepth": 75.2,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 76.4,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "DAV3",
@@ -429,8 +429,8 @@
         "lv95X": 2778291.9,
         "lv95Y": 1184615.9,
         "elevation": 2455.0,
-        "snowDepth": 90.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 93.4,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "KES2",
@@ -439,8 +439,8 @@
         "lv95X": 2788351.0,
         "lv95Y": 1166289.0,
         "elevation": 2727.0,
-        "snowDepth": 68.71,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 68.63,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SCB2",
@@ -449,8 +449,8 @@
         "lv95X": 2650770.0,
         "lv95Y": 1181126.0,
         "elevation": 1777.0,
-        "snowDepth": 170.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 170.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SPN2",
@@ -460,7 +460,7 @@
         "lv95Y": 1120004.0,
         "elevation": 2620.0,
         "snowDepth": 0.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "TUJ3",
@@ -469,8 +469,8 @@
         "lv95X": 2699640.9,
         "lv95Y": 1167024.9,
         "elevation": 2211.0,
-        "snowDepth": 70.5,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 70.8,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BED3",
@@ -479,8 +479,8 @@
         "lv95X": 2683168.9,
         "lv95Y": 1149444.9,
         "elevation": 2101.0,
-        "snowDepth": 110.2,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 110.4,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ZER2",
@@ -489,8 +489,8 @@
         "lv95X": 2622353.9,
         "lv95Y": 1099001.1,
         "elevation": 2752.0,
-        "snowDepth": 108.1,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 110.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BER2",
@@ -499,8 +499,8 @@
         "lv95X": 2799121.1,
         "lv95Y": 1144312.0,
         "elevation": 2447.0,
-        "snowDepth": 54.52,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 55.8,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "NAS2",
@@ -509,8 +509,8 @@
         "lv95X": 2814919.9,
         "lv95Y": 1188734.2,
         "elevation": 2350.0,
-        "snowDepth": 41.11,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 41.19,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "VIA2",
@@ -520,7 +520,7 @@
         "lv95Y": 1127019.9,
         "elevation": 2355.0,
         "snowDepth": 41.97,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ELS2",
@@ -529,8 +529,8 @@
         "lv95X": 2615575.0,
         "lv95Y": 1153165.0,
         "elevation": 2143.0,
-        "snowDepth": 47.59,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 45.53,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ELM2",
@@ -539,8 +539,8 @@
         "lv95X": 2729279.0,
         "lv95Y": 1199677.9,
         "elevation": 2058.0,
-        "snowDepth": 123.1,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 126.2,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "FNH2",
@@ -549,8 +549,8 @@
         "lv95X": 2563303.1,
         "lv95Y": 1105584.1,
         "elevation": 2252.0,
-        "snowDepth": 217.2,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 216.6,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "GOM3",
@@ -559,8 +559,8 @@
         "lv95X": 2660648.9,
         "lv95Y": 1148952.0,
         "elevation": 2427.0,
-        "snowDepth": 102.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 105.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "CHA2",
@@ -569,8 +569,8 @@
         "lv95X": 2578868.0,
         "lv95Y": 1136214.0,
         "elevation": 2218.0,
-        "snowDepth": 156.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 157.8,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "TAM2",
@@ -579,8 +579,8 @@
         "lv95X": 2748557.0,
         "lv95Y": 1203768.9,
         "elevation": 2468.0,
-        "snowDepth": 111.3,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 112.1,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "LAG3",
@@ -589,8 +589,8 @@
         "lv95X": 2773641.0,
         "lv95Y": 1143963.9,
         "elevation": 2300.0,
-        "snowDepth": 42.13,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 41.87,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "FAE2",
@@ -599,8 +599,8 @@
         "lv95X": 2604344.0,
         "lv95Y": 1152125.0,
         "elevation": 1971.0,
-        "snowDepth": 103.5,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 102.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BOV2",
@@ -609,8 +609,8 @@
         "lv95X": 2584389.0,
         "lv95Y": 1092601.1,
         "elevation": 2687.0,
-        "snowDepth": 99.8,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 101.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "VDS2",
@@ -619,8 +619,8 @@
         "lv95X": 2594521.0,
         "lv95Y": 1130015.0,
         "elevation": 2385.0,
-        "snowDepth": 192.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 193.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "OBW3",
@@ -629,8 +629,8 @@
         "lv95X": 2670292.9,
         "lv95Y": 1151137.9,
         "elevation": 2194.0,
-        "snowDepth": 97.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 103.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "KLO2",
@@ -639,8 +639,8 @@
         "lv95X": 2785498.9,
         "lv95Y": 1198213.0,
         "elevation": 2147.0,
-        "snowDepth": 71.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 70.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SPN3",
@@ -649,8 +649,8 @@
         "lv95X": 2646836.9,
         "lv95Y": 1114241.0,
         "elevation": 2424.0,
-        "snowDepth": 119.8,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 119.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "YBR2",
@@ -659,8 +659,8 @@
         "lv95X": 2705399.0,
         "lv95Y": 1210310.9,
         "elevation": 1701.0,
-        "snowDepth": 93.1,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 91.8,
+        "measureDate": "2026-01-11T14:30:00Z"
       },
       {
         "code": "OFE2",
@@ -669,8 +669,8 @@
         "lv95X": 2818233.0,
         "lv95Y": 1168460.2,
         "elevation": 2359.0,
-        "snowDepth": 47.25,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 48.64,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "TUJ2",
@@ -679,8 +679,8 @@
         "lv95X": 2698312.9,
         "lv95Y": 1171099.9,
         "elevation": 2262.0,
-        "snowDepth": 82.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 81.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "URS2",
@@ -689,8 +689,8 @@
         "lv95X": 2682404.9,
         "lv95Y": 1160065.9,
         "elevation": 2169.0,
-        "snowDepth": 43.45,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 43.63,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "PAR2",
@@ -699,8 +699,8 @@
         "lv95X": 2780435.9,
         "lv95Y": 1191674.9,
         "elevation": 2290.0,
-        "snowDepth": 103.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 104.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "FUS2",
@@ -709,8 +709,8 @@
         "lv95X": 2690824.9,
         "lv95Y": 1143469.9,
         "elevation": 2390.0,
-        "snowDepth": 111.3,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 110.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SAA2",
@@ -719,8 +719,8 @@
         "lv95X": 2634035.9,
         "lv95Y": 1113469.0,
         "elevation": 2480.0,
-        "snowDepth": 42.46,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 41.99,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SIM2",
@@ -729,8 +729,8 @@
         "lv95X": 2718449.9,
         "lv95Y": 1147399.9,
         "elevation": 2450.0,
-        "snowDepth": 55.21,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 55.57,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "WFJ2",
@@ -739,8 +739,8 @@
         "lv95X": 2780848.9,
         "lv95Y": 1189230.9,
         "elevation": 2536.0,
-        "snowDepth": 106.5,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 111.1,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GUT2",
@@ -749,8 +749,8 @@
         "lv95X": 2665113.9,
         "lv95Y": 1170140.0,
         "elevation": 2115.0,
-        "snowDepth": 38.9,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 40.05,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SCA2",
@@ -759,8 +759,8 @@
         "lv95X": 2697589.0,
         "lv95Y": 1185438.9,
         "elevation": 2032.0,
-        "snowDepth": 50.12,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 52.43,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "HTR3",
@@ -769,8 +769,8 @@
         "lv95X": 2746499.9,
         "lv95Y": 1155699.9,
         "elevation": 2200.0,
-        "snowDepth": 25.87,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 26.55,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "PUZ2",
@@ -779,8 +779,8 @@
         "lv95X": 2709038.9,
         "lv95Y": 1164888.9,
         "elevation": 2196.0,
-        "snowDepth": 50.41,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 50.97,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ANV3",
@@ -789,8 +789,8 @@
         "lv95X": 2616832.9,
         "lv95Y": 1107764.1,
         "elevation": 2589.0,
-        "snowDepth": 58.12,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 59.01,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ARO2",
@@ -799,8 +799,8 @@
         "lv95X": 2600558.0,
         "lv95Y": 1097471.1,
         "elevation": 2847.0,
-        "snowDepth": 106.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 108.1,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SAA4",
@@ -809,8 +809,8 @@
         "lv95X": 2636088.9,
         "lv95Y": 1108215.1,
         "elevation": 2680.0,
-        "snowDepth": 63.44,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 63.8,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "DIA2",
@@ -819,8 +819,8 @@
         "lv95X": 2584779.0,
         "lv95Y": 1129353.0,
         "elevation": 2569.0,
-        "snowDepth": 193.3,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 193.0,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ANV2",
@@ -829,8 +829,8 @@
         "lv95X": 2607468.0,
         "lv95Y": 1115206.1,
         "elevation": 2640.0,
-        "snowDepth": 137.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 139.3,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ENG2",
@@ -839,8 +839,8 @@
         "lv95X": 2733168.0,
         "lv95Y": 1206120.9,
         "elevation": 2162.0,
-        "snowDepth": 99.3,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 98.6,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "JAU2",
@@ -850,7 +850,7 @@
         "lv95Y": 1164658.0,
         "elevation": 1707.0,
         "snowDepth": 119.2,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "STH2",
@@ -859,8 +859,8 @@
         "lv95X": 2606198.0,
         "lv95Y": 1170095.0,
         "elevation": 1791.0,
-        "snowDepth": 129.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 129.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "CSL2",
@@ -869,8 +869,8 @@
         "lv95X": 2569089.9,
         "lv95Y": 1218450.0,
         "elevation": 1455.0,
-        "snowDepth": 45.5,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 46.33,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ALI2",
@@ -879,8 +879,8 @@
         "lv95X": 2565806.0,
         "lv95Y": 1148688.0,
         "elevation": 1708.0,
-        "snowDepth": 93.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 94.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "KLT3",
@@ -890,7 +890,7 @@
         "lv95Y": 1209976.3,
         "elevation": 1258.0,
         "snowDepth": 46.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BER3",
@@ -899,8 +899,8 @@
         "lv95X": 2790343.1,
         "lv95Y": 1146291.0,
         "elevation": 2625.0,
-        "snowDepth": 38.49,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 39.15,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "LHO2",
@@ -909,8 +909,8 @@
         "lv95X": 2638714.9,
         "lv95Y": 1159182.0,
         "elevation": 2150.0,
-        "snowDepth": 35.15,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 36.37,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "VRG3",
@@ -919,8 +919,8 @@
         "lv95X": 2679931.8,
         "lv95Y": 1121523.0,
         "elevation": 2038.0,
-        "snowDepth": 71.01,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 70.61,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "MUN2",
@@ -929,8 +929,8 @@
         "lv95X": 2637465.9,
         "lv95Y": 1131413.0,
         "elevation": 2205.0,
-        "snowDepth": 105.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 104.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "LAG2",
@@ -939,8 +939,8 @@
         "lv95X": 2777150.0,
         "lv95Y": 1147049.9,
         "elevation": 2730.0,
-        "snowDepth": 77.7,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 78.6,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "BEV2",
@@ -949,8 +949,8 @@
         "lv95X": 2783955.0,
         "lv95Y": 1157063.9,
         "elevation": 2512.0,
-        "snowDepth": 61.07,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 61.78,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ARO3",
@@ -959,8 +959,8 @@
         "lv95X": 2609545.9,
         "lv95Y": 1103997.1,
         "elevation": 2602.0,
-        "snowDepth": 62.87,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 64.08,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "MES2",
@@ -969,8 +969,8 @@
         "lv95X": 2732362.9,
         "lv95Y": 1141746.9,
         "elevation": 2384.0,
-        "snowDepth": 59.18,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 58.86,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GOS3",
@@ -979,8 +979,8 @@
         "lv95X": 2689424.9,
         "lv95Y": 1167907.9,
         "elevation": 2209.0,
-        "snowDepth": 70.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 72.3,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "GAD2",
@@ -989,8 +989,8 @@
         "lv95X": 2673273.0,
         "lv95Y": 1177446.9,
         "elevation": 2063.0,
-        "snowDepth": 103.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 105.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "LUK2",
@@ -999,8 +999,8 @@
         "lv95X": 2703036.9,
         "lv95Y": 1162314.9,
         "elevation": 2555.0,
-        "snowDepth": 116.9,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 117.3,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SCA3",
@@ -1009,8 +1009,8 @@
         "lv95X": 2702186.0,
         "lv95Y": 1194252.9,
         "elevation": 2338.0,
-        "snowDepth": 126.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 125.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "MEI2",
@@ -1019,8 +1019,8 @@
         "lv95X": 2685005.0,
         "lv95Y": 1177554.9,
         "elevation": 2220.0,
-        "snowDepth": 112.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 113.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BOG2",
@@ -1029,8 +1029,8 @@
         "lv95X": 2679537.9,
         "lv95Y": 1131901.9,
         "elevation": 2299.0,
-        "snowDepth": 39.47,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 41.71,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "MUO2",
@@ -1039,8 +1039,8 @@
         "lv95X": 2699515.0,
         "lv95Y": 1199397.9,
         "elevation": 2083.0,
-        "snowDepth": 169.5,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 170.3,
+        "measureDate": "2026-01-11T15:00:00Z"
       },
       {
         "code": "RNZ3",
@@ -1049,8 +1049,8 @@
         "lv95X": 2690831.5,
         "lv95Y": 1171083.0,
         "elevation": 2390.0,
-        "snowDepth": 70.8,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 72.89,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "FOU2",
@@ -1059,8 +1059,8 @@
         "lv95X": 2571210.1,
         "lv95Y": 1091200.1,
         "elevation": 2800.0,
-        "snowDepth": 166.9,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 165.9,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "FIS2",
@@ -1069,8 +1069,8 @@
         "lv95X": 2618068.0,
         "lv95Y": 1146709.0,
         "elevation": 2155.0,
-        "snowDepth": 75.5,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 76.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "FIR2",
@@ -1079,8 +1079,8 @@
         "lv95X": 2647887.0,
         "lv95Y": 1168807.0,
         "elevation": 2111.0,
-        "snowDepth": 106.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 106.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ALB2",
@@ -1089,8 +1089,8 @@
         "lv95X": 2783748.0,
         "lv95Y": 1161660.0,
         "elevation": 2322.0,
-        "snowDepth": 13.68,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 13.71,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BED4",
@@ -1099,8 +1099,8 @@
         "lv95X": 2681159.9,
         "lv95Y": 1153249.9,
         "elevation": 2305.0,
-        "snowDepth": 134.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 135.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "OTT2",
@@ -1109,8 +1109,8 @@
         "lv95X": 2609435.0,
         "lv95Y": 1154275.0,
         "elevation": 2017.0,
-        "snowDepth": 127.6,
-        "measureDate": "2026-01-11T14:00:00Z"
+        "snowDepth": 129.2,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "NAR2",
@@ -1119,8 +1119,8 @@
         "lv95X": 2709822.9,
         "lv95Y": 1147851.9,
         "elevation": 2077.0,
-        "snowDepth": 21.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 20.82,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "BIN4",
@@ -1130,7 +1130,7 @@
         "lv95Y": 1133273.0,
         "elevation": 2354.0,
         "snowDepth": 123.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ELA2",
@@ -1139,8 +1139,8 @@
         "lv95X": 2774403.0,
         "lv95Y": 1162546.9,
         "elevation": 2726.0,
-        "snowDepth": 92.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 91.8,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SAA5",
@@ -1149,8 +1149,8 @@
         "lv95X": 2641949.9,
         "lv95Y": 1108588.0,
         "elevation": 2952.0,
-        "snowDepth": 89.2,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 89.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "SLF2",
@@ -1159,8 +1159,8 @@
         "lv95X": 2783878.9,
         "lv95Y": 1187447.0,
         "elevation": 1563.0,
-        "snowDepth": 40.13,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 40.1,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "MTR2",
@@ -1169,8 +1169,8 @@
         "lv95X": 2713716.9,
         "lv95Y": 1140778.9,
         "elevation": 1884.0,
-        "snowDepth": 18.5,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 18.66,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "EGH2",
@@ -1179,8 +1179,8 @@
         "lv95X": 2650209.9,
         "lv95Y": 1140815.0,
         "elevation": 2500.0,
-        "snowDepth": 81.6,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 81.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ORT2",
@@ -1189,8 +1189,8 @@
         "lv95X": 2715769.0,
         "lv95Y": 1197451.9,
         "elevation": 1824.0,
-        "snowDepth": 147.5,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 149.3,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "TRU2",
@@ -1199,8 +1199,8 @@
         "lv95X": 2611306.0,
         "lv95Y": 1135519.0,
         "elevation": 2459.0,
-        "snowDepth": 206.0,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 206.7,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ATT2",
@@ -1209,8 +1209,8 @@
         "lv95X": 2586953.0,
         "lv95Y": 1105990.1,
         "elevation": 2550.0,
-        "snowDepth": 137.1,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 138.6,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ZNZ2",
@@ -1219,8 +1219,8 @@
         "lv95X": 2797312.0,
         "lv95Y": 1175078.0,
         "elevation": 2677.0,
-        "snowDepth": 96.2,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 95.4,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "OBM2",
@@ -1229,8 +1229,8 @@
         "lv95X": 2582760.0,
         "lv95Y": 1141183.0,
         "elevation": 2097.0,
-        "snowDepth": 164.4,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 163.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "ZER4",
@@ -1239,8 +1239,8 @@
         "lv95X": 2620433.9,
         "lv95Y": 1094082.1,
         "elevation": 2408.0,
-        "snowDepth": 76.7,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 76.5,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "HTR2",
@@ -1249,8 +1249,8 @@
         "lv95X": 2735421.9,
         "lv95Y": 1156310.9,
         "elevation": 2147.0,
-        "snowDepth": 39.36,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 38.17,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "PMA2",
@@ -1259,8 +1259,8 @@
         "lv95X": 2760854.0,
         "lv95Y": 1160906.9,
         "elevation": 2429.0,
-        "snowDepth": 51.25,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 51.35,
+        "measureDate": "2026-01-11T15:30:00Z"
       },
       {
         "code": "DAV6",
@@ -1269,8 +1269,8 @@
         "lv95X": 2787263.9,
         "lv95Y": 1184196.0,
         "elevation": 2290.0,
-        "snowDepth": 66.78,
-        "measureDate": "2026-01-11T14:30:00Z"
+        "snowDepth": 65.85,
+        "measureDate": "2026-01-11T15:30:00Z"
       }
     ]
   },
@@ -1288,7 +1288,7 @@
         "lv95Y": 1148939.0,
         "elevation": 1321,
         "snowDepth": 19,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "AIG",
@@ -1298,7 +1298,7 @@
         "lv95Y": 1130713.0,
         "elevation": 381,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ALT",
@@ -1308,7 +1308,7 @@
         "lv95Y": 1193564.0,
         "elevation": 438,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "AND",
@@ -1318,7 +1318,7 @@
         "lv95Y": 1164038.0,
         "elevation": 987,
         "snowDepth": 3,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ARH",
@@ -1328,7 +1328,7 @@
         "lv95Y": 1261382.0,
         "elevation": 398,
         "snowDepth": 1,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "BAS",
@@ -1338,7 +1338,7 @@
         "lv95Y": 1265612.0,
         "elevation": 316,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "BER",
@@ -1348,7 +1348,7 @@
         "lv95Y": 1204410.0,
         "elevation": 553,
         "snowDepth": 3,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "BIA",
@@ -1358,7 +1358,7 @@
         "lv95Y": 1132792.0,
         "elevation": 278,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "BLA",
@@ -1377,8 +1377,8 @@
         "lv95X": 2595831.0,
         "lv95Y": 1163587.0,
         "elevation": 820,
-        "snowDepth": 18,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 17,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CDF",
@@ -1388,7 +1388,7 @@
         "lv95Y": 1214862.0,
         "elevation": 1017,
         "snowDepth": 32,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CDM",
@@ -1397,8 +1397,8 @@
         "lv95X": 2573817.0,
         "lv95Y": 1137853.0,
         "elevation": 1412,
-        "snowDepth": 56,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 55,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CGI",
@@ -1408,7 +1408,7 @@
         "lv95Y": 1139574.0,
         "elevation": 458,
         "snowDepth": 1,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CHA",
@@ -1418,7 +1418,7 @@
         "lv95Y": 1220158.0,
         "elevation": 1594,
         "snowDepth": 30,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CHB",
@@ -1428,7 +1428,7 @@
         "lv95Y": 1169388.0,
         "elevation": 1045,
         "snowDepth": 25,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CHD",
@@ -1438,7 +1438,7 @@
         "lv95Y": 1147655.0,
         "elevation": 1028,
         "snowDepth": 25,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CHU",
@@ -1447,8 +1447,8 @@
         "lv95X": 2759485.0,
         "lv95Y": 1193176.0,
         "elevation": 556,
-        "snowDepth": 8,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 9,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "CHZ",
@@ -1458,7 +1458,7 @@
         "lv95Y": 1226878.0,
         "elevation": 443,
         "snowDepth": 4,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "DAV",
@@ -1468,7 +1468,7 @@
         "lv95Y": 1187459.0,
         "elevation": 1594,
         "snowDepth": 42,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "DEM",
@@ -1478,7 +1478,7 @@
         "lv95Y": 1244543.0,
         "elevation": 439,
         "snowDepth": 7,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "DIS",
@@ -1488,7 +1488,7 @@
         "lv95Y": 1173793.0,
         "elevation": 1197,
         "snowDepth": 26,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "DOL",
@@ -1498,7 +1498,7 @@
         "lv95Y": 1142373.0,
         "elevation": 1670,
         "snowDepth": 46,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "EBK",
@@ -1508,7 +1508,7 @@
         "lv95Y": 1237176.0,
         "elevation": 623,
         "snowDepth": 32,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ENG",
@@ -1518,7 +1518,7 @@
         "lv95Y": 1186069.0,
         "elevation": 1036,
         "snowDepth": 21,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "FAH",
@@ -1527,8 +1527,8 @@
         "lv95X": 2562465.0,
         "lv95Y": 1252676.0,
         "elevation": 596,
-        "snowDepth": 16,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 15,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "FRE",
@@ -1538,7 +1538,7 @@
         "lv95Y": 1188082.0,
         "elevation": 1205,
         "snowDepth": 18,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "FRU",
@@ -1547,8 +1547,8 @@
         "lv95X": 2616773.0,
         "lv95Y": 1160884.0,
         "elevation": 756,
-        "snowDepth": 18,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 17,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "GOE",
@@ -1558,7 +1558,7 @@
         "lv95Y": 1245949.0,
         "elevation": 380,
         "snowDepth": 3,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "GRA",
@@ -1568,7 +1568,7 @@
         "lv95Y": 1180076.0,
         "elevation": 651,
         "snowDepth": 6,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "GRE",
@@ -1578,7 +1578,7 @@
         "lv95Y": 1225350.0,
         "elevation": 428,
         "snowDepth": 2,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "GRH",
@@ -1588,7 +1588,7 @@
         "lv95Y": 1158215.0,
         "elevation": 1980,
         "snowDepth": 121,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "GUE",
@@ -1598,7 +1598,7 @@
         "lv95Y": 1167480.0,
         "elevation": 2286,
         "snowDepth": 50,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "GVE",
@@ -1608,7 +1608,7 @@
         "lv95Y": 1122632.0,
         "elevation": 411,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "HOE",
@@ -1618,7 +1618,7 @@
         "lv95Y": 1247756.0,
         "elevation": 1133,
         "snowDepth": 19,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ILZ",
@@ -1628,7 +1628,7 @@
         "lv95Y": 1181965.0,
         "elevation": 698,
         "snowDepth": 16,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "INT",
@@ -1637,8 +1637,8 @@
         "lv95X": 2633043.0,
         "lv95Y": 1169070.0,
         "elevation": 578,
-        "snowDepth": 12,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 11,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "KLO",
@@ -1648,7 +1648,7 @@
         "lv95Y": 1259339.0,
         "elevation": 426,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "KOP",
@@ -1658,7 +1658,7 @@
         "lv95Y": 1218665.0,
         "elevation": 485,
         "snowDepth": 3,
-        "measureDate": "11.01.2026 14:10"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "LUZ",
@@ -1668,7 +1668,7 @@
         "lv95Y": 1209850.0,
         "elevation": 454,
         "snowDepth": 9,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "MAG",
@@ -1678,7 +1678,7 @@
         "lv95Y": 1113161.0,
         "elevation": 203,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "MAS",
@@ -1688,7 +1688,7 @@
         "lv95Y": 1167317.0,
         "elevation": 715,
         "snowDepth": 16,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "MER",
@@ -1698,7 +1698,7 @@
         "lv95Y": 1175930.0,
         "elevation": 589,
         "snowDepth": 6,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "MLS",
@@ -1708,7 +1708,7 @@
         "lv95Y": 1155077.0,
         "elevation": 1974,
         "snowDepth": 52,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "MOB",
@@ -1718,7 +1718,7 @@
         "lv95Y": 1102189.0,
         "elevation": 839,
         "snowDepth": 9,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "MUB",
@@ -1728,7 +1728,7 @@
         "lv95Y": 1202480.0,
         "elevation": 480,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "NAP",
@@ -1738,7 +1738,7 @@
         "lv95Y": 1206079.0,
         "elevation": 1404,
         "snowDepth": 54,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ORO",
@@ -1748,7 +1748,7 @@
         "lv95Y": 1158053.0,
         "elevation": 828,
         "snowDepth": 9,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "OTL",
@@ -1758,7 +1758,7 @@
         "lv95Y": 1114316.0,
         "elevation": 367,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "PAY",
@@ -1768,7 +1768,7 @@
         "lv95Y": 1184612.0,
         "elevation": 490,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "PIO",
@@ -1778,7 +1778,7 @@
         "lv95Y": 1152264.0,
         "elevation": 990,
         "snowDepth": 12,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "PLF",
@@ -1788,7 +1788,7 @@
         "lv95Y": 1177407.0,
         "elevation": 1042,
         "snowDepth": 15,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "REH",
@@ -1798,7 +1798,7 @@
         "lv95Y": 1253548.0,
         "elevation": 444,
         "snowDepth": 4,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ROB",
@@ -1808,7 +1808,7 @@
         "lv95Y": 1136249.0,
         "elevation": 1078,
         "snowDepth": 1,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "RUE",
@@ -1818,7 +1818,7 @@
         "lv95Y": 1253846.0,
         "elevation": 611,
         "snowDepth": 11,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SAM",
@@ -1828,7 +1828,7 @@
         "lv95Y": 1155685.0,
         "elevation": 1709,
         "snowDepth": 19,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SBE",
@@ -1838,7 +1838,7 @@
         "lv95Y": 1147294.0,
         "elevation": 1639,
         "snowDepth": 13,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SBO",
@@ -1848,7 +1848,7 @@
         "lv95Y": 1077972.0,
         "elevation": 351,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SCU",
@@ -1857,8 +1857,8 @@
         "lv95X": 2817139.0,
         "lv95Y": 1186393.0,
         "elevation": 1304,
-        "snowDepth": 13,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 14,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SHA",
@@ -1868,7 +1868,7 @@
         "lv95Y": 1282803.0,
         "elevation": 438,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SIM",
@@ -1878,7 +1878,7 @@
         "lv95Y": 1116340.0,
         "elevation": 1465,
         "snowDepth": 1,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SIO",
@@ -1888,7 +1888,7 @@
         "lv95Y": 1118584.0,
         "elevation": 482,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "SMA",
@@ -1897,8 +1897,8 @@
         "lv95X": 2685118.0,
         "lv95Y": 1248066.0,
         "elevation": 556,
-        "snowDepth": 20,
-        "measureDate": "11.01.2026 14:10"
+        "snowDepth": 19,
+        "measureDate": "11.01.2026 15:10"
       },
       {
         "code": "SPF",
@@ -1908,7 +1908,7 @@
         "lv95Y": 1199711.0,
         "elevation": 744,
         "snowDepth": 11,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "STG",
@@ -1918,7 +1918,7 @@
         "lv95Y": 1254588.0,
         "elevation": 776,
         "snowDepth": 16,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "TAE",
@@ -1927,8 +1927,8 @@
         "lv95X": 2710518.0,
         "lv95Y": 1259824.0,
         "elevation": 539,
-        "snowDepth": 9,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 8,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "THU",
@@ -1938,7 +1938,7 @@
         "lv95Y": 1177640.0,
         "elevation": 570,
         "snowDepth": 4,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ULR",
@@ -1947,8 +1947,8 @@
         "lv95X": 2666748.0,
         "lv95Y": 1150767.0,
         "elevation": 1346,
-        "snowDepth": 67,
-        "measureDate": "11.01.2026 14:20"
+        "snowDepth": 66,
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "VEV",
@@ -1958,7 +1958,7 @@
         "lv95Y": 1146847.0,
         "elevation": 405,
         "snowDepth": 0,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "VIT",
@@ -1968,7 +1968,7 @@
         "lv95Y": 1163651.0,
         "elevation": 859,
         "snowDepth": 5,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "WAE",
@@ -1978,7 +1978,7 @@
         "lv95Y": 1230744.0,
         "elevation": 485,
         "snowDepth": 13,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       },
       {
         "code": "ZER",
@@ -1988,7 +1988,7 @@
         "lv95Y": 1097574.0,
         "elevation": 1638,
         "snowDepth": 34,
-        "measureDate": "11.01.2026 14:20"
+        "measureDate": "11.01.2026 15:20"
       }
     ]
   },
