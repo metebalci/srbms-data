@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright (c) 2026 Mete Balci. All Rights Reserved.
 """
 Fetch real-time 3D wind data from MeteoSwiss ICON-CH1-EPS model.
 

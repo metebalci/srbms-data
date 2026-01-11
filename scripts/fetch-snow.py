@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright (c) 2026 Mete Balci. All Rights Reserved.
 """
 Fetch real-time snow data from SLF IMIS and MeteoSwiss SwissMetNet stations.
 
