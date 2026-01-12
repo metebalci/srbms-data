@@ -9,8 +9,7 @@ Dataset: ERA5 hourly data on pressure levels / model levels
 ERA5 model levels extend from surface (level 137) to 0.01 hPa (level 1, ~80km).
 This script fetches upper model levels for wind data above GFS coverage.
 
-Note: ERA5 is reanalysis (not forecast), with ~5 day delay for final data,
-~2-3 days for preliminary (ERA5T) data.
+Note: ERA5 is reanalysis (not forecast), with ~5-6 day delay for data availability.
 
 Output: era5-wind.json + era5-wind.bin with mesospheric wind grid
 
@@ -84,10 +83,10 @@ def compute_grid_dimensions() -> Tuple[int, int]:
 def get_target_date() -> datetime:
     """Get the target date for ERA5 data.
 
-    ERA5 has ~5 day delay for final data, ~2-3 days for preliminary.
-    We target 3 days ago to ensure data availability.
+    ERA5 has ~5-6 day delay for final data.
+    We target 6 days ago to ensure data availability.
     """
-    return datetime.now(timezone.utc) - timedelta(days=3)
+    return datetime.now(timezone.utc) - timedelta(days=6)
 
 
 def find_model_levels_for_altitudes(target_altitudes: List[int]) -> List[int]:
@@ -131,7 +130,7 @@ def fetch_era5_wind() -> Optional[dict]:
     # Get target date
     target_date = get_target_date()
     date_str = target_date.strftime("%Y-%m-%d")
-    print(f"  Target date: {date_str} (ERA5 has ~3 day delay)", flush=True)
+    print(f"  Target date: {date_str} (ERA5 has ~6 day delay)", flush=True)
 
     # Find model levels for our target altitudes
     model_levels = find_model_levels_for_altitudes(ERA5_TARGET_ALTITUDES)
@@ -398,7 +397,7 @@ def main():
     print(f"  Grid resolution: {GRID_RESOLUTION_KM} km")
     print(f"  Grid size: {cols} x {rows}")
     print(f"  Data source: Copernicus Climate Data Store (ERA5)")
-    print(f"  Note: ERA5 is reanalysis with ~3 day delay")
+    print(f"  Note: ERA5 is reanalysis with ~6 day delay")
     print()
 
     try:
@@ -432,7 +431,7 @@ def main():
             "source": "ERA5 reanalysis",
             "grid_resolution_km": GRID_RESOLUTION_KM,
             "bin_hash": bin_hash,
-            "note": "ERA5 has ~3-5 day delay; mesosphere levels are extrapolated",
+            "note": "ERA5 has ~6 day delay; mesosphere levels are extrapolated",
             "altitude_grid": {
                 **result,
                 "data_file": "era5-wind.bin",
