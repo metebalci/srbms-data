@@ -4,7 +4,7 @@
 Fetch real-time 3D wind data from MeteoSwiss ICON-CH1-EPS model.
 
 Data source: ICON-CH1-EPS numerical weather prediction model (~1km resolution)
-Output: weather.json with unified 3D wind grid for all altitudes (surface to 22km)
+Output: icon-wind.json + icon-wind.bin with 3D wind grid for altitudes 0-22km
 
 No longer uses SMN weather stations - ICON provides complete 3D wind field.
 """
@@ -863,10 +863,10 @@ def fetch_icon_wind(target_time: Optional[datetime] = None) -> Optional[dict]:
 
 def main():
     # Output files (binary format)
-    weather_json = Path("weather.json")
-    weather_bin = Path("weather.bin")
-    quality_json = Path("weather-quality.json")
-    quality_bin = Path("weather-quality.bin")
+    weather_json = Path("icon-wind.json")
+    weather_bin = Path("icon-wind.bin")
+    quality_json = Path("icon-wind-quality.json")
+    quality_bin = Path("icon-wind-quality.bin")
 
     print("=" * 60)
     print("ICON-CH1-EPS Wind Data Fetcher")
@@ -915,7 +915,7 @@ def main():
         wind_u_i16 = np.clip(wind_u * WIND_SCALE, -32767, 32767).astype(np.int16)
         wind_v_i16 = np.clip(wind_v * WIND_SCALE, -32767, 32767).astype(np.int16)
 
-        # Write weather.bin (wind_u followed by wind_v as Int16)
+        # Write icon-wind.bin (wind_u followed by wind_v as Int16)
         weather_bin_data = wind_u_i16.tobytes() + wind_v_i16.tobytes()
         with open(weather_bin, 'wb') as f:
             f.write(weather_bin_data)
@@ -923,15 +923,15 @@ def main():
         # Compute hash for verification (SHA-256, first 16 chars)
         weather_bin_hash = hashlib.sha256(weather_bin_data).hexdigest()[:16]
 
-        # Write weather.json (metadata only)
+        # Write icon-wind.json (metadata only)
         weather_meta = {
             "timestamp": timestamp,  # Forecast valid time
             "model_run": model_run_timestamp,  # When the model was run
             "grid_resolution_km": GRID_RESOLUTION_KM,
-            "bin_hash": weather_bin_hash,  # Hash of weather.bin for verification
+            "bin_hash": weather_bin_hash,  # Hash of icon-wind.bin for verification
             "altitude_grid": {
                 **altitude_grid,
-                "data_file": "weather.bin",
+                "data_file": "icon-wind.bin",
                 "data_length": len(wind_u),
                 "data_type": "int16",
                 "wind_scale": WIND_SCALE
@@ -946,15 +946,15 @@ def main():
             std_i16 = np.clip(np.array(wind_speed_std) * SPEED_STD_SCALE, 0, 32767).astype(np.int16)
             spread_i16 = np.clip(np.array(wind_dir_spread) * DIR_SPREAD_SCALE, 0, 32767).astype(np.int16)
 
-            # Write weather-quality.bin
+            # Write icon-wind-quality.bin
             with open(quality_bin, 'wb') as f:
                 f.write(std_i16.tobytes())
                 f.write(spread_i16.tobytes())
 
-            # Write weather-quality.json (metadata only)
+            # Write icon-wind-quality.json (metadata only)
             quality_meta = {
                 "timestamp": timestamp,
-                "data_file": "weather-quality.bin",
+                "data_file": "icon-wind-quality.bin",
                 "data_length": len(std_i16),
                 "data_type": "int16",
                 "speed_std_scale": SPEED_STD_SCALE,

@@ -1,0 +1,51 @@
+# Copyright (c) 2026 Mete Balci. All Rights Reserved.
+
+name: Fetch ERA5 Mesospheric Data
+
+on:
+  schedule:
+    # ERA5 has ~3-5 day delay, so daily fetch is sufficient
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-era5:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch ERA5 mesospheric data
+        id: era5
+        env:
+          CDS_URL: ${{ secrets.CDS_URL }}
+          CDS_KEY: ${{ secrets.CDS_KEY }}
+        run: |
+          cd public
+          python ../scripts/fetch-era5.py
+          if [ -f era5-wind.bin ] && [ -s era5-wind.bin ]; then
+            echo "success=true" >> $GITHUB_OUTPUT
+          else
+            echo "success=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.era5.outputs.success == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/
+          git commit -m "Update ERA5 mesospheric data $(date -u +'%Y-%m-%d %H:%M UTC')" || exit 0
+          git pull --rebase
+          git push

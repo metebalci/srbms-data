@@ -1,6 +1,6 @@
 # Copyright (c) 2026 Mete Balci. All Rights Reserved.
 
-name: Fetch Weather Data
+name: Fetch ICON Weather Data
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  fetch-weather:
+  fetch-icon:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,23 +25,23 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Fetch weather data
-        id: weather
+      - name: Fetch ICON weather data
+        id: icon
         run: |
           cd public
-          python ../scripts/fetch-weather.py
-          if [ -f weather.bin ] && [ -s weather.bin ]; then
+          python ../scripts/fetch-icon.py
+          if [ -f icon-wind.bin ] && [ -s icon-wind.bin ]; then
             echo "success=true" >> $GITHUB_OUTPUT
           else
             echo "success=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and push
-        if: steps.weather.outputs.success == 'true'
+        if: steps.icon.outputs.success == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/
-          git commit -m "Update weather data $(date -u +'%Y-%m-%d %H:%M UTC')" || exit 0
+          git commit -m "Update ICON weather data $(date -u +'%Y-%m-%d %H:%M UTC')" || exit 0
           git pull --rebase
           git push
