@@ -42,8 +42,6 @@ GRID_RESOLUTION_KM = 5  # 5km gives good detail while keeping files small
 
 # Scale factors for Int16 encoding (divide by these to get actual values)
 WIND_SCALE = 100      # 0.01 m/s precision, ±327 m/s range
-SPEED_STD_SCALE = 100 # 0.01 m/s precision
-DIR_SPREAD_SCALE = 10 # 0.1 degree precision, ±3276° range
 
 # Altitude levels (meters) - surface 10m + 1km spacing above 2000m
 ALTITUDE_LEVELS = [
@@ -279,22 +277,6 @@ def load_icon_grid_coordinates() -> Optional[Tuple[np.ndarray, np.ndarray]]:
         return None
 
 
-def circular_std(angles_deg: np.ndarray) -> float:
-    """Compute circular standard deviation of angles in degrees."""
-    if len(angles_deg) == 0:
-        return 0.0
-
-    angles_rad = np.radians(angles_deg)
-    mean_sin = np.mean(np.sin(angles_rad))
-    mean_cos = np.mean(np.cos(angles_rad))
-
-    # R is the mean resultant length (0 to 1)
-    R = np.sqrt(mean_sin**2 + mean_cos**2)
-
-    # Circular standard deviation
-    if R >= 1.0:
-        return 0.0
-    return np.degrees(np.sqrt(-2 * np.log(R)))
 
 
 def find_closest_icon_levels(target_altitudes: list) -> dict:
@@ -517,68 +499,6 @@ def parse_grib_with_eccodes(grib_path: Path) -> Optional[np.ndarray]:
         return None
 
 
-def downsample_to_grid(
-    data: np.ndarray,
-    data_lats: np.ndarray,
-    data_lons: np.ndarray,
-    target_cols: int,
-    target_rows: int,
-    bounds: dict
-) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """Downsample high-resolution data to our target grid.
-
-    Returns:
-        Tuple of (mean_values, std_values, direction_spread) arrays
-    """
-    # Create target grid coordinates
-    target_lons = np.linspace(bounds["west"], bounds["east"], target_cols)
-    target_lats = np.linspace(bounds["south"], bounds["north"], target_rows)
-
-    mean_values = np.zeros((target_rows, target_cols))
-    std_values = np.zeros((target_rows, target_cols))
-
-    # Cell size in degrees
-    lon_step = (bounds["east"] - bounds["west"]) / target_cols
-    lat_step = (bounds["north"] - bounds["south"]) / target_rows
-
-    for i, target_lat in enumerate(target_lats):
-        for j, target_lon in enumerate(target_lons):
-            # Find all source cells within this target cell
-            lat_mask = (data_lats >= target_lat) & (data_lats < target_lat + lat_step)
-            lon_mask = (data_lons >= target_lon) & (data_lons < target_lon + lon_step)
-
-            # For 2D lat/lon arrays
-            if data_lats.ndim == 2:
-                cell_mask = lat_mask & lon_mask
-                cell_values = data[cell_mask]
-            else:
-                # For 1D coordinate arrays
-                lat_indices = np.where(lat_mask)[0]
-                lon_indices = np.where(lon_mask)[0]
-                if len(lat_indices) > 0 and len(lon_indices) > 0:
-                    cell_values = data[np.ix_(lat_indices, lon_indices)].flatten()
-                else:
-                    cell_values = np.array([])
-
-            if len(cell_values) > 0:
-                mean_values[i, j] = np.mean(cell_values)
-                std_values[i, j] = np.std(cell_values)
-            else:
-                # Nearest neighbor fallback
-                if data_lats.ndim == 1:
-                    lat_idx = np.argmin(np.abs(data_lats - target_lat))
-                    lon_idx = np.argmin(np.abs(data_lons - target_lon))
-                    mean_values[i, j] = data[lat_idx, lon_idx]
-                else:
-                    # Find nearest point
-                    dist = (data_lats - target_lat)**2 + (data_lons - target_lon)**2
-                    nearest_idx = np.unravel_index(np.argmin(dist), dist.shape)
-                    mean_values[i, j] = data[nearest_idx]
-                std_values[i, j] = 0
-
-    return mean_values, std_values
-
-
 def interpolate_unstructured_to_grid(
     values: np.ndarray,
     source_lats: np.ndarray,
@@ -586,11 +506,10 @@ def interpolate_unstructured_to_grid(
     target_cols: int,
     target_rows: int,
     bounds: dict
-) -> Tuple[np.ndarray, np.ndarray]:
+) -> np.ndarray:
     """Interpolate from unstructured ICON grid to regular lat/lon grid.
 
-    Uses nearest neighbor interpolation for simplicity and speed.
-    Returns (interpolated_values, std_values).
+    Uses inverse distance weighting with k nearest neighbors.
     """
     from scipy.spatial import cKDTree
 
@@ -606,13 +525,12 @@ def interpolate_unstructured_to_grid(
     # For each target point, find nearest source points
     target_points = np.column_stack([target_lon_grid.ravel(), target_lat_grid.ravel()])
 
-    # Use k nearest neighbors for interpolation and std calculation
-    k = 4  # Use 4 nearest neighbors
+    # Use k nearest neighbors for interpolation
+    k = 4
     distances, indices = tree.query(target_points, k=k)
 
-    # Compute weighted average and std
+    # Compute weighted average
     interpolated = np.zeros(len(target_points))
-    std_values = np.zeros(len(target_points))
 
     for i, (dists, idxs) in enumerate(zip(distances, indices)):
         neighbor_values = values[idxs]
@@ -620,14 +538,12 @@ def interpolate_unstructured_to_grid(
         # Inverse distance weighting
         if dists[0] < 0.001:  # Very close to a source point
             interpolated[i] = neighbor_values[0]
-            std_values[i] = np.std(neighbor_values)
         else:
             weights = 1.0 / np.maximum(dists, 0.001)
             weights /= weights.sum()
             interpolated[i] = np.sum(neighbor_values * weights)
-            std_values[i] = np.std(neighbor_values)
 
-    return interpolated.reshape(target_rows, target_cols), std_values.reshape(target_rows, target_cols)
+    return interpolated.reshape(target_rows, target_cols)
 
 
 def parse_multilevel_grib(grib_path: Path, target_levels: list) -> Optional[dict]:
@@ -675,8 +591,7 @@ def fetch_icon_wind(target_time: Optional[datetime] = None) -> Optional[dict]:
         target_time: The time we want the forecast for (default: now)
 
     Returns:
-        altitude_grid dict with wind_u, wind_v, and quality metrics,
-        or None if fetching fails
+        altitude_grid dict with wind_u and wind_v, or None if fetching fails
     """
     if target_time is None:
         target_time = datetime.now(timezone.utc)
@@ -784,8 +699,6 @@ def fetch_icon_wind(target_time: Optional[datetime] = None) -> Optional[dict]:
 
         wind_u = np.zeros(total_cells, dtype=np.float32)
         wind_v = np.zeros(total_cells, dtype=np.float32)
-        wind_speed_std = np.zeros(total_cells, dtype=np.float32)
-        wind_dir_spread = np.zeros(total_cells, dtype=np.float32)
 
         print("  Interpolating each altitude level...", flush=True)
 
@@ -812,23 +725,15 @@ def fetch_icon_wind(target_time: Optional[datetime] = None) -> Optional[dict]:
 
             # Interpolate to regular grid
             try:
-                u_grid, u_std = interpolate_unstructured_to_grid(
+                u_grid = interpolate_unstructured_to_grid(
                     u_swiss, lats_filtered, lons_filtered, cols, rows, SWISS_BOUNDS
                 )
-                v_grid, v_std = interpolate_unstructured_to_grid(
+                v_grid = interpolate_unstructured_to_grid(
                     v_swiss, lats_filtered, lons_filtered, cols, rows, SWISS_BOUNDS
                 )
             except Exception as e:
                 print(f"  Interpolation error at altitude {altitude}m: {e}", flush=True)
                 return None
-
-            # Compute quality metrics
-            speed_std = np.sqrt(u_std**2 + v_std**2)
-
-            # Compute direction spread from U/V std
-            # Approximation: use average of component stds
-            dir_spread = np.degrees(np.arctan2(np.sqrt(u_std**2 + v_std**2),
-                                               np.sqrt(u_grid**2 + v_grid**2) + 0.01))
 
             # Store in output arrays
             for row in range(rows):
@@ -836,8 +741,6 @@ def fetch_icon_wind(target_time: Optional[datetime] = None) -> Optional[dict]:
                     idx = row * cols * num_levels + col * num_levels + level_idx
                     wind_u[idx] = u_grid[row, col]
                     wind_v[idx] = v_grid[row, col]
-                    wind_speed_std[idx] = speed_std[row, col]
-                    wind_dir_spread[idx] = dir_spread[row, col]
 
             # Progress indicator
             if (level_idx + 1) % 5 == 0:
@@ -855,9 +758,7 @@ def fetch_icon_wind(target_time: Optional[datetime] = None) -> Optional[dict]:
             "rows": rows,
             "levels_m": ALTITUDE_LEVELS,
             "wind_u": wind_u.tolist(),
-            "wind_v": wind_v.tolist(),
-            "wind_speed_std": wind_speed_std.tolist(),
-            "wind_dir_spread": wind_dir_spread.tolist()
+            "wind_v": wind_v.tolist()
         }
 
 
@@ -865,8 +766,6 @@ def main():
     # Output files (binary format)
     weather_json = Path("icon-wind.json")
     weather_bin = Path("icon-wind.bin")
-    quality_json = Path("icon-wind-quality.json")
-    quality_bin = Path("icon-wind-quality.bin")
 
     print("=" * 60)
     print("ICON-CH1-EPS Wind Data Fetcher")
@@ -908,8 +807,6 @@ def main():
         # Extract arrays for binary output
         wind_u = np.array(altitude_grid.pop("wind_u"), dtype=np.float32)
         wind_v = np.array(altitude_grid.pop("wind_v"), dtype=np.float32)
-        wind_speed_std = altitude_grid.pop("wind_speed_std", None)
-        wind_dir_spread = altitude_grid.pop("wind_dir_spread", None)
 
         # Convert to Int16 with scale factors (50% size reduction)
         wind_u_i16 = np.clip(wind_u * WIND_SCALE, -32767, 32767).astype(np.int16)
@@ -940,38 +837,12 @@ def main():
         with open(weather_json, 'w') as f:
             json.dump(weather_meta, f)
 
-        # Write quality files if available
-        if wind_speed_std is not None and wind_dir_spread is not None:
-            # Convert to Int16 with scale factors
-            std_i16 = np.clip(np.array(wind_speed_std) * SPEED_STD_SCALE, 0, 32767).astype(np.int16)
-            spread_i16 = np.clip(np.array(wind_dir_spread) * DIR_SPREAD_SCALE, 0, 32767).astype(np.int16)
-
-            # Write icon-wind-quality.bin
-            with open(quality_bin, 'wb') as f:
-                f.write(std_i16.tobytes())
-                f.write(spread_i16.tobytes())
-
-            # Write icon-wind-quality.json (metadata only)
-            quality_meta = {
-                "timestamp": timestamp,
-                "data_file": "icon-wind-quality.bin",
-                "data_length": len(std_i16),
-                "data_type": "int16",
-                "speed_std_scale": SPEED_STD_SCALE,
-                "dir_spread_scale": DIR_SPREAD_SCALE
-            }
-            with open(quality_json, 'w') as f:
-                json.dump(quality_meta, f)
-
         # Report sizes
         print()
         print("=" * 60)
         print(f"Output written:")
         print(f"  {weather_json}: {weather_json.stat().st_size / 1024:.1f} KB")
         print(f"  {weather_bin}: {weather_bin.stat().st_size / 1024:.1f} KB")
-        if quality_bin.exists():
-            print(f"  {quality_json}: {quality_json.stat().st_size / 1024:.1f} KB")
-            print(f"  {quality_bin}: {quality_bin.stat().st_size / 1024:.1f} KB")
         print(f"Grid: {cols}x{rows}x{len(ALTITUDE_LEVELS)}")
         print("=" * 60)
 
