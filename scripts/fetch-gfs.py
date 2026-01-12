@@ -244,19 +244,12 @@ def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndar
                 lats = np.linspace(lat_first, lat_last, nj)
                 lons = np.linspace(lon_first, lon_last, ni)
 
-                # Handle longitude wrapping (GFS uses 0-360)
-                if lon_first > 180:
-                    lon_first -= 360
-                if lon_last > 180:
-                    lon_last -= 360
-                lons = np.linspace(lon_first, lon_last, ni)
-
-                # For 0-360 format, we need to handle Switzerland (~6-10°E)
-                # GFS 0.25° typically spans 0-360°
-                if lons[0] >= 0 and lons[-1] > 180:
-                    # Convert to -180 to 180
+                # Handle longitude wrapping (GFS uses 0-360, convert to -180 to 180)
+                # Switzerland is at ~6-10°E, so we need proper handling
+                if lons[-1] > 180:
+                    # Convert values > 180 to negative (e.g., 359.75 -> -0.25)
                     lons = np.where(lons > 180, lons - 360, lons)
-                    # Sort and reorder data accordingly
+                    # Sort to get -180...180 order and reorder data accordingly
                     sort_idx = np.argsort(lons)
                     lons = lons[sort_idx]
                     data = data[:, sort_idx]
