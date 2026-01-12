@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # Copyright (c) 2026 Mete Balci. All Rights Reserved.
 """
-Fetch mesospheric wind data from ECMWF ERA5 reanalysis (48-80km).
+Fetch mesospheric wind data from ECMWF ERA5 reanalysis (49-80km).
 
 Data source: Copernicus Climate Data Store (CDS)
-Dataset: ERA5 hourly data on pressure levels / model levels
+Dataset: ERA5 hourly data on pressure levels
 
-ERA5 model levels extend from surface (level 137) to 0.01 hPa (level 1, ~80km).
-This script fetches upper model levels for wind data above GFS coverage.
+Fetches 1 hPa level (~48km) as base and extrapolates to mesosphere (49-80km).
+GFS covers up to 48km, so ERA5 provides the higher altitude continuation.
 
 Note: ERA5 is reanalysis (not forecast), with ~5-6 day delay for data availability.
 
@@ -65,8 +65,9 @@ ERA5_MODEL_LEVELS = {
     15: 47000,   # ~1.5 hPa
 }
 
-# Target altitude levels (meters) for output - above GFS coverage
-ERA5_TARGET_ALTITUDES = [50000, 55000, 60000, 65000, 70000, 75000, 80000]
+# Target altitude levels (meters) for output
+# Starts at 48km to overlap with GFS (which ends at 48km) for smooth interpolation
+ERA5_TARGET_ALTITUDES = [48000, 55000, 60000, 65000, 70000, 75000, 80000]
 
 
 def compute_grid_dimensions() -> Tuple[int, int]:
@@ -167,15 +168,14 @@ def fetch_era5_wind() -> Optional[dict]:
         print("  Requesting ERA5 pressure level data...", flush=True)
 
         try:
-            # Request U and V wind at highest available pressure levels
-            # ERA5 pressure levels only go to 1 hPa, so we request those
-            # and will extrapolate for higher altitudes
+            # Request U and V wind at 1 hPa (~48km) as base for extrapolation
+            # GFS now covers up to 48km, so we only need 1 hPa to extrapolate above
             client.retrieve(
                 'reanalysis-era5-pressure-levels',
                 {
                     'product_type': 'reanalysis',
                     'variable': ['u_component_of_wind', 'v_component_of_wind'],
-                    'pressure_level': ['1', '2', '3', '5', '7', '10'],  # hPa
+                    'pressure_level': ['1'],  # 1 hPa ≈ 48km, used as base for extrapolation
                     'year': target_date.strftime('%Y'),
                     'month': target_date.strftime('%m'),
                     'day': target_date.strftime('%d'),
@@ -226,15 +226,9 @@ def parse_era5_grib(grib_path: Path, target_cols: int, target_rows: int) -> Opti
 
     print("  Parsing ERA5 GRIB file...", flush=True)
 
-    # Pressure level to altitude mapping
-    pressure_to_altitude = {
-        1: 48000,    # 1 hPa ≈ 48 km
-        2: 43000,    # 2 hPa ≈ 43 km
-        3: 40000,    # 3 hPa ≈ 40 km
-        5: 37000,    # 5 hPa ≈ 37 km
-        7: 34000,    # 7 hPa ≈ 34 km
-        10: 31000,   # 10 hPa ≈ 31 km
-    }
+    # We only download 1 hPa (~48km) as the base for extrapolation
+    # GFS covers up to 48km, so ERA5 provides 49km onwards
+    BASE_ALTITUDE = 48000  # 1 hPa altitude used as extrapolation base
 
     # Storage for wind components by level
     u_by_level = {}
@@ -304,80 +298,59 @@ def parse_era5_grib(grib_path: Path, target_cols: int, target_rows: int) -> Opti
     target_lon_grid, target_lat_grid = np.meshgrid(target_lons, target_lats)
     target_points = np.column_stack([target_lat_grid.ravel(), target_lon_grid.ravel()])
 
-    # Build output arrays - include extrapolated levels above 1 hPa
-    # Use available ERA5 levels plus extrapolated mesospheric levels
-    available_levels = sorted(u_by_level.keys())
-    altitude_levels = [pressure_to_altitude[p] for p in available_levels]
+    # Output mesosphere levels, starting at 48km (1 hPa) to overlap with GFS
+    # 48km uses actual ERA5 data, higher levels are extrapolated with decay
+    output_altitudes = ERA5_TARGET_ALTITUDES  # [48000, 55000, 60000, 65000, 70000, 75000, 80000]
 
-    # Add extrapolated levels for mesosphere (above 48km)
-    # At these altitudes, we apply decay factor since wind data is limited
-    extrapolated_altitudes = [55000, 60000, 65000, 70000, 75000, 80000]
-    all_altitudes = altitude_levels + extrapolated_altitudes
-
-    num_levels = len(all_altitudes)
+    num_levels = len(output_altitudes)
     total_cells = target_rows * target_cols * num_levels
 
     wind_u = np.zeros(total_cells, dtype=np.float32)
     wind_v = np.zeros(total_cells, dtype=np.float32)
 
-    # Get the 1 hPa wind for extrapolation base
-    u_1hpa = None
-    v_1hpa = None
+    # Get the 1 hPa wind data as base for extrapolation
+    if 1 not in u_by_level or 1 not in v_by_level:
+        print("  Error: 1 hPa level not found in GRIB file", flush=True)
+        return None
 
-    for level_idx, (pressure, altitude) in enumerate(zip(available_levels, altitude_levels)):
-        u_data = u_by_level[pressure]
-        v_data = v_by_level[pressure]
+    u_data = u_by_level[1]
+    v_data = v_by_level[1]
 
-        # Interpolate to target grid
-        u_interp = RegularGridInterpolator((lats, lons), u_data, bounds_error=False, fill_value=None)
-        v_interp = RegularGridInterpolator((lats, lons), v_data, bounds_error=False, fill_value=None)
+    # Interpolate 1 hPa base to target grid
+    u_interp = RegularGridInterpolator((lats, lons), u_data, bounds_error=False, fill_value=None)
+    v_interp = RegularGridInterpolator((lats, lons), v_data, bounds_error=False, fill_value=None)
 
-        u_grid = u_interp(target_points).reshape(target_rows, target_cols)
-        v_grid = v_interp(target_points).reshape(target_rows, target_cols)
+    u_base = u_interp(target_points).reshape(target_rows, target_cols)
+    v_base = v_interp(target_points).reshape(target_rows, target_cols)
 
-        # Save 1 hPa data for extrapolation
-        if pressure == 1:
-            u_1hpa = u_grid.copy()
-            v_1hpa = v_grid.copy()
+    base_speed = np.sqrt(u_base**2 + v_base**2)
+    print(f"    Base (1 hPa, ~48km): {base_speed.mean():.1f} m/s mean", flush=True)
 
-        # Store in output array
+    # Build output: 48km is actual ERA5 data, higher levels extrapolated with decay
+    # Wind generally decreases in the mesosphere
+    print("  Building mesosphere levels...", flush=True)
+
+    for level_idx, altitude in enumerate(output_altitudes):
+        # Decay factor based on altitude above 48km
+        # 48km: decay=1.0 (actual data), then linear decay to ~50% at 80km
+        altitude_above_base = altitude - BASE_ALTITUDE
+        decay_factor = max(0.3, 1.0 - (altitude_above_base / 64000))
+
+        u_level = u_base * decay_factor
+        v_level = v_base * decay_factor
+
         for row in range(target_rows):
             for col in range(target_cols):
                 idx = row * target_cols * num_levels + col * num_levels + level_idx
-                wind_u[idx] = u_grid[row, col]
-                wind_v[idx] = v_grid[row, col]
+                wind_u[idx] = u_level[row, col]
+                wind_v[idx] = v_level[row, col]
 
-        speed = np.sqrt(u_grid**2 + v_grid**2)
-        print(f"    {altitude/1000:.0f} km ({pressure} hPa): {speed.mean():.1f} m/s mean", flush=True)
-
-    # Extrapolate to higher altitudes using 1 hPa as base
-    # Apply gradual decay (wind decreases in mesosphere, though not linearly)
-    if u_1hpa is not None and v_1hpa is not None:
-        print("  Extrapolating to mesosphere...", flush=True)
-        base_altitude = 48000  # 1 hPa altitude
-
-        for extra_idx, extra_alt in enumerate(extrapolated_altitudes):
-            level_idx = len(altitude_levels) + extra_idx
-
-            # Decay factor based on altitude above 48km
-            # Simple linear decay to ~50% at 80km
-            altitude_above_base = extra_alt - base_altitude
-            decay_factor = max(0.3, 1.0 - (altitude_above_base / 64000))
-
-            u_extrap = u_1hpa * decay_factor
-            v_extrap = v_1hpa * decay_factor
-
-            for row in range(target_rows):
-                for col in range(target_cols):
-                    idx = row * target_cols * num_levels + col * num_levels + level_idx
-                    wind_u[idx] = u_extrap[row, col]
-                    wind_v[idx] = v_extrap[row, col]
-
-            speed = np.sqrt(u_extrap**2 + v_extrap**2)
-            print(f"    {extra_alt/1000:.0f} km (extrapolated, {decay_factor:.0%}): {speed.mean():.1f} m/s mean", flush=True)
+        speed = np.sqrt(u_level**2 + v_level**2)
+        label = "actual 1 hPa" if altitude == BASE_ALTITUDE else f"decay {decay_factor:.0%}"
+        print(f"    {altitude/1000:.0f} km ({label}): {speed.mean():.1f} m/s mean", flush=True)
 
     return {
-        "levels_m": all_altitudes,
+        "levels_m": output_altitudes,
         "wind_u": wind_u.tolist(),
         "wind_v": wind_v.tolist()
     }
@@ -431,7 +404,7 @@ def main():
             "source": "ERA5 reanalysis",
             "grid_resolution_km": GRID_RESOLUTION_KM,
             "bin_hash": bin_hash,
-            "note": "ERA5 has ~6 day delay; mesosphere levels are extrapolated",
+            "note": "ERA5 has ~6 day delay; mesosphere levels (49-80km) extrapolated from 1 hPa base",
             "altitude_grid": {
                 **result,
                 "data_file": "era5-wind.bin",

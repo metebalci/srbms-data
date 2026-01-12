@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # Copyright (c) 2026 Mete Balci. All Rights Reserved.
 """
-Fetch stratospheric wind data from NOAA GFS model (22-48km).
+Fetch stratospheric wind data from NOAA GFS model (21-48km).
 
 Data source: NOAA Global Forecast System (GFS) 0.25° resolution
 Available on AWS Open Data: https://registry.opendata.aws/noaa-gfs-bdp-pds/
 
-Pressure levels: 10, 7, 5, 3, 2, 1 hPa (approximately 31-48 km altitude)
+Pressure levels: 50, 30, 20, 10, 7, 5, 3, 2, 1 hPa (approximately 21-48 km altitude)
+Starts at 21km to overlap with ICON (which ends at 22km) for smooth interpolation.
 
 Output: gfs-wind.json + gfs-wind.bin with stratospheric wind grid
 """
@@ -43,7 +44,11 @@ WIND_SCALE = 100  # 0.01 m/s precision
 
 # GFS pressure levels for stratosphere (hPa) with approximate altitudes (m)
 # Standard atmosphere: h = -8500 * ln(p/1013.25)
+# Starts at 21km to overlap with ICON (which ends at 22km) for smooth interpolation
 GFS_PRESSURE_LEVELS = [
+    (50, 21000),   # 50 hPa ≈ 21 km (overlap with ICON)
+    (30, 24000),   # 30 hPa ≈ 24 km
+    (20, 27000),   # 20 hPa ≈ 27 km
     (10, 31000),   # 10 hPa ≈ 31 km
     (7, 34000),    # 7 hPa ≈ 34 km
     (5, 37000),    # 5 hPa ≈ 37 km
