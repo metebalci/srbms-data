@@ -1,10 +1,10 @@
 # Copyright (c) 2026 Mete Balci. All Rights Reserved.
 
-name: Fetch ERA5 Mesospheric Data
+name: Fetch ERA5 Wind Data
 
 on:
   schedule:
-    # ERA5 has ~3-5 day delay, so daily fetch is sufficient
+    # ERA5 has ~6 day delay, so daily fetch is sufficient
     - cron: '0 6 * * *'
   workflow_dispatch:
 
@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Fetch ERA5 mesospheric data
+      - name: Fetch ERA5 wind data
         id: era5
         env:
           CDS_URL: ${{ secrets.CDS_URL }}
@@ -46,6 +46,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/
-          git commit -m "Update ERA5 mesospheric data $(date -u +'%Y-%m-%d %H:%M UTC')" || exit 0
+          git commit -m "Update ERA5 wind data $(date -u +'%Y-%m-%d %H:%M UTC')" || exit 0
           git pull --rebase
           git push
