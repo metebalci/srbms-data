@@ -21,13 +21,12 @@ Requires CDS API credentials:
 
 import hashlib
 import json
-import math
 import os
 import sys
 import tempfile
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Optional, Tuple, List
+from typing import Optional
 import numpy as np
 
 # Switzerland bounds (WGS84)
@@ -38,8 +37,8 @@ SWISS_BOUNDS = {
     "north": 47.8
 }
 
-# Grid resolution
-GRID_RESOLUTION_KM = 5
+# Grid resolution - use native ERA5 0.25° resolution (~31km)
+GRID_RESOLUTION_DEG = 0.25
 
 # Scale factor for Int16 encoding
 WIND_SCALE = 100  # 0.01 m/s precision
@@ -76,17 +75,6 @@ ERA5_PRESSURE_LEVELS = [
 MESOSPHERE_ALTITUDES = [55000, 60000, 65000, 70000, 75000, 80000]
 
 
-def compute_grid_dimensions() -> Tuple[int, int]:
-    """Compute grid dimensions from bounds and resolution."""
-    width_km = (SWISS_BOUNDS["east"] - SWISS_BOUNDS["west"]) * 111 * math.cos(math.radians(46.8))
-    height_km = (SWISS_BOUNDS["north"] - SWISS_BOUNDS["south"]) * 111
-
-    cols = int(width_km / GRID_RESOLUTION_KM)
-    rows = int(height_km / GRID_RESOLUTION_KM)
-
-    return cols, rows
-
-
 def get_target_date() -> datetime:
     """Get the target date for ERA5 data.
 
@@ -109,9 +97,7 @@ def fetch_era5_wind() -> Optional[dict]:
         return None
 
     print("Fetching ERA5 full-atmosphere wind data...", flush=True)
-
-    cols, rows = compute_grid_dimensions()
-    print(f"  Target grid: {cols}x{rows} ({GRID_RESOLUTION_KM}km resolution)", flush=True)
+    print(f"  Grid resolution: {GRID_RESOLUTION_DEG}° (native ERA5)", flush=True)
 
     # Get target date
     target_date = get_target_date()
@@ -169,33 +155,24 @@ def fetch_era5_wind() -> Optional[dict]:
 
         print(f"  Downloaded: {output_file.stat().st_size / 1024:.1f} KB", flush=True)
 
-        # Parse the GRIB file
-        wind_data = parse_era5_grib(output_file, cols, rows)
+        # Parse the GRIB file - returns native ERA5 grid info
+        wind_data = parse_era5_grib(output_file)
         if wind_data is None:
             return None
 
         return {
             "data_date": target_date,
-            "bounds": SWISS_BOUNDS,
-            "cols": cols,
-            "rows": rows,
             **wind_data
         }
 
 
-def parse_era5_grib(grib_path: Path, target_cols: int, target_rows: int) -> Optional[dict]:
-    """Parse ERA5 GRIB file and extract wind data for all levels.
-
-    Args:
-        grib_path: Path to GRIB file
-        target_cols: Target grid columns
-        target_rows: Target grid rows
+def parse_era5_grib(grib_path: Path) -> Optional[dict]:
+    """Parse ERA5 GRIB file and extract wind data as-is (no resampling).
 
     Returns:
-        Dict with levels_m, wind_u, wind_v arrays
+        Dict with grid info, levels_m, wind_u, wind_v arrays
     """
     import eccodes
-    from scipy.interpolate import RegularGridInterpolator
 
     print("  Parsing ERA5 GRIB file...", flush=True)
 
@@ -252,32 +229,29 @@ def parse_era5_grib(grib_path: Path, target_cols: int, target_rows: int) -> Opti
         return None
 
     print(f"  Found {len(u_by_level)} pressure levels", flush=True)
+    print(f"  ERA5 grid: {len(lons)}x{len(lats)} (native)", flush=True)
 
-    # Ensure lats are in ascending order for interpolation
-    if lats[0] > lats[-1]:
-        lats = lats[::-1]
-        for level in u_by_level:
-            u_by_level[level] = u_by_level[level][::-1, :]
-        for level in v_by_level:
-            v_by_level[level] = v_by_level[level][::-1, :]
+    # ERA5 typically has latitudes north to south (descending order)
+    # Physics code expects row 0 = north, which matches this order
+    # So we keep the original order - NO flipping needed
+    # Just ensure bounds are reported correctly (south < north)
+    lat_south = min(lats[0], lats[-1])
+    lat_north = max(lats[0], lats[-1])
 
-    # Target grid setup
-    target_lats = np.linspace(SWISS_BOUNDS['south'], SWISS_BOUNDS['north'], target_rows)
-    target_lons = np.linspace(SWISS_BOUNDS['west'], SWISS_BOUNDS['east'], target_cols)
-    target_lon_grid, target_lat_grid = np.meshgrid(target_lons, target_lats)
-    target_points = np.column_stack([target_lat_grid.ravel(), target_lon_grid.ravel()])
+    rows = len(lats)
+    cols = len(lons)
 
     # Build output altitude levels: pressure levels + mesosphere extrapolation
     output_altitudes = [alt for _, alt in ERA5_PRESSURE_LEVELS] + MESOSPHERE_ALTITUDES
     num_levels = len(output_altitudes)
-    total_cells = target_rows * target_cols * num_levels
+    total_cells = rows * cols * num_levels
 
     wind_u = np.zeros(total_cells, dtype=np.float32)
     wind_v = np.zeros(total_cells, dtype=np.float32)
 
-    print("  Interpolating pressure levels to target grid...", flush=True)
+    print("  Storing pressure levels (no resampling)...", flush=True)
 
-    # Process each pressure level
+    # Process each pressure level - store as-is
     for level_idx, (pressure_hpa, altitude_m) in enumerate(ERA5_PRESSURE_LEVELS):
         if pressure_hpa not in u_by_level or pressure_hpa not in v_by_level:
             print(f"    Warning: {pressure_hpa} hPa not found, skipping", flush=True)
@@ -286,21 +260,14 @@ def parse_era5_grib(grib_path: Path, target_cols: int, target_rows: int) -> Opti
         u_data = u_by_level[pressure_hpa]
         v_data = v_by_level[pressure_hpa]
 
-        # Interpolate to target grid
-        u_interp = RegularGridInterpolator((lats, lons), u_data, bounds_error=False, fill_value=None)
-        v_interp = RegularGridInterpolator((lats, lons), v_data, bounds_error=False, fill_value=None)
+        # Store directly (no interpolation)
+        for row in range(rows):
+            for col in range(cols):
+                idx = row * cols * num_levels + col * num_levels + level_idx
+                wind_u[idx] = u_data[row, col]
+                wind_v[idx] = v_data[row, col]
 
-        u_grid = u_interp(target_points).reshape(target_rows, target_cols)
-        v_grid = v_interp(target_points).reshape(target_rows, target_cols)
-
-        # Store in output array
-        for row in range(target_rows):
-            for col in range(target_cols):
-                idx = row * target_cols * num_levels + col * num_levels + level_idx
-                wind_u[idx] = u_grid[row, col]
-                wind_v[idx] = v_grid[row, col]
-
-        speed = np.sqrt(u_grid**2 + v_grid**2)
+        speed = np.sqrt(u_data**2 + v_data**2)
         print(f"    {pressure_hpa} hPa (~{altitude_m/1000:.0f} km): {speed.min():.1f} - {speed.max():.1f} m/s", flush=True)
 
     # Extrapolate mesosphere levels from 1 hPa base
@@ -311,13 +278,6 @@ def parse_era5_grib(grib_path: Path, target_cols: int, target_rows: int) -> Opti
     else:
         u_base = u_by_level[1]
         v_base = v_by_level[1]
-
-        u_interp = RegularGridInterpolator((lats, lons), u_base, bounds_error=False, fill_value=None)
-        v_interp = RegularGridInterpolator((lats, lons), v_base, bounds_error=False, fill_value=None)
-
-        u_base_grid = u_interp(target_points).reshape(target_rows, target_cols)
-        v_base_grid = v_interp(target_points).reshape(target_rows, target_cols)
-
         BASE_ALTITUDE = 48000  # 1 hPa
 
         for meso_idx, altitude in enumerate(MESOSPHERE_ALTITUDES):
@@ -327,19 +287,29 @@ def parse_era5_grib(grib_path: Path, target_cols: int, target_rows: int) -> Opti
             altitude_above_base = altitude - BASE_ALTITUDE
             decay_factor = max(0.3, 1.0 - (altitude_above_base / 64000))
 
-            u_level = u_base_grid * decay_factor
-            v_level = v_base_grid * decay_factor
+            # Apply decay to base level wind
+            u_level = u_base * decay_factor
+            v_level = v_base * decay_factor
 
-            for row in range(target_rows):
-                for col in range(target_cols):
-                    idx = row * target_cols * num_levels + col * num_levels + level_idx
+            for row in range(rows):
+                for col in range(cols):
+                    idx = row * cols * num_levels + col * num_levels + level_idx
                     wind_u[idx] = u_level[row, col]
                     wind_v[idx] = v_level[row, col]
 
             speed = np.sqrt(u_level**2 + v_level**2)
             print(f"    {altitude/1000:.0f} km (decay {decay_factor:.0%}): {speed.min():.1f} - {speed.max():.1f} m/s", flush=True)
 
+    # Return data with actual ERA5 grid info
     return {
+        "bounds": {
+            "west": float(min(lons[0], lons[-1])),
+            "east": float(max(lons[0], lons[-1])),
+            "south": float(lat_south),
+            "north": float(lat_north)
+        },
+        "cols": cols,
+        "rows": rows,
         "levels_m": output_altitudes,
         "wind_u": wind_u.tolist(),
         "wind_v": wind_v.tolist()
@@ -355,13 +325,11 @@ def main():
     print("=" * 60)
     print()
 
-    cols, rows = compute_grid_dimensions()
     num_levels = len(ERA5_PRESSURE_LEVELS) + len(MESOSPHERE_ALTITUDES)
 
     print(f"Configuration:")
-    print(f"  Data source: ECMWF ERA5 reanalysis (~31km native resolution)")
-    print(f"  Grid resolution: {GRID_RESOLUTION_KM} km (interpolated)")
-    print(f"  Grid size: {cols} x {rows}")
+    print(f"  Data source: ECMWF ERA5 reanalysis")
+    print(f"  Grid resolution: {GRID_RESOLUTION_DEG}° (~31km native)")
     print(f"  Altitude levels: {num_levels} (surface to 80km)")
     print(f"  Note: ERA5 is reanalysis with ~6 day delay")
     print()
@@ -396,7 +364,7 @@ def main():
             "timestamp": timestamp,
             "model_run": timestamp,
             "source": "ERA5 reanalysis (~31km)",
-            "grid_resolution_km": GRID_RESOLUTION_KM,
+            "grid_resolution_deg": GRID_RESOLUTION_DEG,
             "bin_hash": bin_hash,
             "note": "ERA5 reanalysis has ~6 day delay; mesosphere (55-80km) extrapolated from 1 hPa",
             "altitude_grid": {
