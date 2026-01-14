@@ -22,16 +22,21 @@ from pathlib import Path
 from typing import Optional, Tuple, List
 import requests
 import numpy as np
+from pyproj import Transformer
+
+# EPSG:3035 (ETRS89-LAEA) transformer for European projection
+wgs84_to_laea = Transformer.from_crs("EPSG:4326", "EPSG:3035", always_xy=True)
 
 # GFS data on AWS S3
 GFS_BASE_URL = "https://noaa-gfs-bdp-pds.s3.amazonaws.com"
 
-# Switzerland bounds (WGS84) - same as ERA5
-SWISS_BOUNDS = {
-    "west": 5.9,
-    "east": 10.5,
-    "south": 45.8,
-    "north": 47.8
+# Europe bounds (WGS84) - covers DACH and future expansion
+# Roughly: Portugal to Poland, Sicily to Norway
+EUROPE_BOUNDS = {
+    "west": -11.0,
+    "east": 25.0,
+    "south": 35.0,
+    "north": 60.0
 }
 
 # Scale factor for Int16 encoding
@@ -205,7 +210,7 @@ def download_byte_range(url: str, start: int, end: int) -> Optional[bytes]:
 
 
 def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
-    """Extract data from GRIB2 bytes for the Switzerland region."""
+    """Extract data from GRIB2 bytes for the Europe region."""
     import eccodes
 
     with tempfile.NamedTemporaryFile(delete=False, suffix='.grib2') as f:
@@ -239,7 +244,7 @@ def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndar
                     lons = lons[sort_idx]
                     data = data[:, sort_idx]
 
-                # Extract Switzerland region with margin
+                # Extract Europe region with margin
                 lat_mask = (lats >= bounds['south'] - 0.5) & (lats <= bounds['north'] + 0.5)
                 lon_mask = (lons >= bounds['west'] - 0.5) & (lons <= bounds['east'] + 0.5)
 
@@ -247,7 +252,7 @@ def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndar
                 lon_indices = np.where(lon_mask)[0]
 
                 if len(lat_indices) == 0 or len(lon_indices) == 0:
-                    print(f"  Warning: No data in Switzerland bounds", flush=True)
+                    print(f"  Warning: No data in Europe bounds", flush=True)
                     return None
 
                 data_bounded = data[lat_indices[0]:lat_indices[-1]+1, lon_indices[0]:lon_indices[-1]+1]
@@ -264,6 +269,25 @@ def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndar
         return None
     finally:
         os.unlink(temp_path)
+
+
+def compute_laea_bounds(lons: np.ndarray, lats: np.ndarray) -> dict:
+    """Compute LAEA (EPSG:3035) bounds from WGS84 grid coordinates.
+
+    Returns bounds that can be used for direct scene coordinate lookups.
+    """
+    # Convert corner points to LAEA
+    corners_lon = [lons[0], lons[-1], lons[0], lons[-1]]
+    corners_lat = [lats[0], lats[0], lats[-1], lats[-1]]
+
+    laea_x, laea_y = wgs84_to_laea.transform(corners_lon, corners_lat)
+
+    return {
+        "minX": float(min(laea_x)),
+        "maxX": float(max(laea_x)),
+        "minY": float(min(laea_y)),
+        "maxY": float(max(laea_y))
+    }
 
 
 def fetch_gfs_wind() -> Optional[dict]:
@@ -306,7 +330,7 @@ def fetch_gfs_wind() -> Optional[dict]:
     if u_bytes is None:
         return None
 
-    test_result = extract_grib_data(u_bytes, SWISS_BOUNDS)
+    test_result = extract_grib_data(u_bytes, EUROPE_BOUNDS)
     if test_result is None:
         return None
 
@@ -364,13 +388,13 @@ def fetch_gfs_wind() -> Optional[dict]:
             continue
 
         # Extract U
-        u_result = extract_grib_data(u_bytes, SWISS_BOUNDS)
+        u_result = extract_grib_data(u_bytes, EUROPE_BOUNDS)
         if u_result is None:
             continue
         u_data, _, _ = u_result
 
         # Extract V
-        v_result = extract_grib_data(v_bytes, SWISS_BOUNDS)
+        v_result = extract_grib_data(v_bytes, EUROPE_BOUNDS)
         if v_result is None:
             continue
         v_data, _, _ = v_result
@@ -392,6 +416,10 @@ def fetch_gfs_wind() -> Optional[dict]:
     lon_west = min(lons[0], lons[-1])
     lon_east = max(lons[0], lons[-1])
 
+    # Compute LAEA bounds for direct scene coordinate lookup
+    laea_bounds = compute_laea_bounds(lons, lats)
+    print(f"  LAEA bounds: X={laea_bounds['minX']:.0f} to {laea_bounds['maxX']:.0f}, Y={laea_bounds['minY']:.0f} to {laea_bounds['maxY']:.0f}", flush=True)
+
     return {
         "forecast_time": target_time,
         "cycle_time": cycle_time,
@@ -402,6 +430,7 @@ def fetch_gfs_wind() -> Optional[dict]:
             "south": float(lat_south),
             "north": float(lat_north)
         },
+        "bounds_laea": laea_bounds,
         "cols": cols,
         "rows": rows,
         "levels_m": altitude_levels,
@@ -421,6 +450,7 @@ def main():
 
     print(f"Configuration:")
     print(f"  Data source: NOAA GFS 0.25° (real-time forecast)")
+    print(f"  Coverage: Europe ({EUROPE_BOUNDS['west']}°W to {EUROPE_BOUNDS['east']}°E, {EUROPE_BOUNDS['south']}°N to {EUROPE_BOUNDS['north']}°N)")
     print(f"  Pressure levels: {len(ALL_PRESSURE_LEVELS)} (1000 hPa to 0.01 hPa)")
     print(f"  Altitude range: surface to ~80 km")
     print()
