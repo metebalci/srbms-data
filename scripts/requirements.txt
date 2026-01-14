@@ -1,11 +1,8 @@
-# Dependencies for ERA5 wind data fetch script
+# Dependencies for GFS wind data fetch script
 
 # Core dependencies
 numpy>=1.24.0
-scipy>=1.10.0
+requests>=2.28.0
 
 # For GRIB2 parsing
 eccodes>=1.5.0
-
-# For ERA5 data from Copernicus Climate Data Store
-cdsapi>=0.7.0
