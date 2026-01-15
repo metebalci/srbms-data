@@ -458,6 +458,7 @@ def main():
 
         # Write metadata
         meta = {
+            "version": 1,
             "timestamp": timestamp,
             "model_run": cycle_time.isoformat(),
             "forecast_hour": forecast_hour,
