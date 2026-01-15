@@ -22,10 +22,6 @@ from pathlib import Path
 from typing import Optional, Tuple, List
 import requests
 import numpy as np
-from pyproj import Transformer
-
-# EPSG:3035 (ETRS89-LAEA) transformer for European projection
-wgs84_to_laea = Transformer.from_crs("EPSG:4326", "EPSG:3035", always_xy=True)
 
 # GFS data on AWS S3
 GFS_BASE_URL = "https://noaa-gfs-bdp-pds.s3.amazonaws.com"
@@ -271,25 +267,6 @@ def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndar
         os.unlink(temp_path)
 
 
-def compute_laea_bounds(lons: np.ndarray, lats: np.ndarray) -> dict:
-    """Compute LAEA (EPSG:3035) bounds from WGS84 grid coordinates.
-
-    Returns bounds that can be used for direct scene coordinate lookups.
-    """
-    # Convert corner points to LAEA
-    corners_lon = [lons[0], lons[-1], lons[0], lons[-1]]
-    corners_lat = [lats[0], lats[0], lats[-1], lats[-1]]
-
-    laea_x, laea_y = wgs84_to_laea.transform(corners_lon, corners_lat)
-
-    return {
-        "minX": float(min(laea_x)),
-        "maxX": float(max(laea_x)),
-        "minY": float(min(laea_y)),
-        "maxY": float(max(laea_y))
-    }
-
-
 def fetch_gfs_wind() -> Optional[dict]:
     """Fetch full-atmosphere wind data from GFS."""
     print("Fetching NOAA GFS full-atmosphere wind data...", flush=True)
@@ -410,15 +387,13 @@ def fetch_gfs_wind() -> Optional[dict]:
         speed = np.sqrt(u_data**2 + v_data**2)
         print(f"    Wind speed: {speed.min():.1f} - {speed.max():.1f} m/s", flush=True)
 
-    # Compute bounds from actual extracted data
+    # Compute bounds from actual extracted data (WGS84)
     lat_south = min(lats[0], lats[-1])
     lat_north = max(lats[0], lats[-1])
     lon_west = min(lons[0], lons[-1])
     lon_east = max(lons[0], lons[-1])
 
-    # Compute LAEA bounds for direct scene coordinate lookup
-    laea_bounds = compute_laea_bounds(lons, lats)
-    print(f"  LAEA bounds: X={laea_bounds['minX']:.0f} to {laea_bounds['maxX']:.0f}, Y={laea_bounds['minY']:.0f} to {laea_bounds['maxY']:.0f}", flush=True)
+    print(f"  WGS84 bounds: {lon_west:.2f}° to {lon_east:.2f}°E, {lat_south:.2f}° to {lat_north:.2f}°N", flush=True)
 
     return {
         "forecast_time": target_time,
@@ -430,7 +405,6 @@ def fetch_gfs_wind() -> Optional[dict]:
             "south": float(lat_south),
             "north": float(lat_north)
         },
-        "bounds_laea": laea_bounds,
         "cols": cols,
         "rows": rows,
         "levels_m": altitude_levels,
