@@ -26,14 +26,16 @@ import numpy as np
 # GFS data on AWS S3
 GFS_BASE_URL = "https://noaa-gfs-bdp-pds.s3.amazonaws.com"
 
-# Europe bounds (WGS84) - covers DACH and future expansion
-# Roughly: Portugal to Poland, Sicily to Norway
-EUROPE_BOUNDS = {
-    "west": -11.0,
-    "east": 25.0,
-    "south": 35.0,
-    "north": 60.0
+# Global bounds (WGS84) - full world coverage
+WORLD_BOUNDS = {
+    "west": -180.0,
+    "east": 180.0,
+    "south": -90.0,
+    "north": 90.0
 }
+
+# Target resolution for downsampling (degrees)
+TARGET_RESOLUTION = 1.0  # 1 degree (native GFS is 0.25°)
 
 # Scale factor for Int16 encoding
 WIND_SCALE = 100  # 0.01 m/s precision
@@ -205,8 +207,32 @@ def download_byte_range(url: str, start: int, end: int) -> Optional[bytes]:
         return None
 
 
-def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
-    """Extract data from GRIB2 bytes for the Europe region."""
+def downsample_grid(data: np.ndarray, lats: np.ndarray, lons: np.ndarray,
+                    target_res: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Downsample grid data to target resolution using block averaging.
+
+    For wind components (U, V), averaging each component separately
+    gives proper vector averaging of the wind field.
+    """
+    native_res = abs(lats[1] - lats[0]) if len(lats) > 1 else 0.25
+    step = max(1, int(round(target_res / native_res)))
+
+    nrows, ncols = data.shape
+    new_rows = nrows // step
+    new_cols = ncols // step
+
+    # Trim to exact multiple of step, then reshape and average
+    trimmed = data[:new_rows * step, :new_cols * step]
+    data_ds = trimmed.reshape(new_rows, step, new_cols, step).mean(axis=(1, 3))
+
+    lats_ds = lats[:new_rows * step:step]
+    lons_ds = lons[:new_cols * step:step]
+
+    return data_ds, lats_ds, lons_ds
+
+
+def extract_grib_data(grib_bytes: bytes) -> Optional[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
+    """Extract full global data from GRIB2 bytes."""
     import eccodes
 
     with tempfile.NamedTemporaryFile(delete=False, suffix='.grib2') as f:
@@ -240,22 +266,7 @@ def extract_grib_data(grib_bytes: bytes, bounds: dict) -> Optional[Tuple[np.ndar
                     lons = lons[sort_idx]
                     data = data[:, sort_idx]
 
-                # Extract Europe region with margin
-                lat_mask = (lats >= bounds['south'] - 0.5) & (lats <= bounds['north'] + 0.5)
-                lon_mask = (lons >= bounds['west'] - 0.5) & (lons <= bounds['east'] + 0.5)
-
-                lat_indices = np.where(lat_mask)[0]
-                lon_indices = np.where(lon_mask)[0]
-
-                if len(lat_indices) == 0 or len(lon_indices) == 0:
-                    print(f"  Warning: No data in Europe bounds", flush=True)
-                    return None
-
-                data_bounded = data[lat_indices[0]:lat_indices[-1]+1, lon_indices[0]:lon_indices[-1]+1]
-                lats_bounded = lats[lat_indices]
-                lons_bounded = lons[lon_indices]
-
-                return data_bounded, lats_bounded, lons_bounded
+                return data, lats, lons
 
             finally:
                 eccodes.codes_release(gid)
@@ -307,15 +318,17 @@ def fetch_gfs_wind() -> Optional[dict]:
     if u_bytes is None:
         return None
 
-    test_result = extract_grib_data(u_bytes, EUROPE_BOUNDS)
+    test_result = extract_grib_data(u_bytes)
     if test_result is None:
         return None
 
+    # Downsample to target resolution
     _, lats, lons = test_result
+    _, lats, lons = downsample_grid(np.zeros((len(lats), len(lons))), lats, lons, TARGET_RESOLUTION)
     rows = len(lats)
     cols = len(lons)
 
-    print(f"  Grid dimensions: {cols}x{rows} (native GFS 0.25°)", flush=True)
+    print(f"  Grid dimensions: {cols}x{rows} (downsampled to {TARGET_RESOLUTION}°)", flush=True)
 
     # Build output arrays
     altitude_levels = []
@@ -365,16 +378,18 @@ def fetch_gfs_wind() -> Optional[dict]:
             continue
 
         # Extract U
-        u_result = extract_grib_data(u_bytes, EUROPE_BOUNDS)
+        u_result = extract_grib_data(u_bytes)
         if u_result is None:
             continue
-        u_data, _, _ = u_result
+        u_data, u_lats, u_lons = u_result
+        u_data, _, _ = downsample_grid(u_data, u_lats, u_lons, TARGET_RESOLUTION)
 
         # Extract V
-        v_result = extract_grib_data(v_bytes, EUROPE_BOUNDS)
+        v_result = extract_grib_data(v_bytes)
         if v_result is None:
             continue
-        v_data, _, _ = v_result
+        v_data, v_lats, v_lons = v_result
+        v_data, _, _ = downsample_grid(v_data, v_lats, v_lons, TARGET_RESOLUTION)
 
         # Store in output arrays (row-major with levels as innermost dimension)
         for row in range(rows):
@@ -424,7 +439,8 @@ def main():
 
     print(f"Configuration:")
     print(f"  Data source: NOAA GFS 0.25° (real-time forecast)")
-    print(f"  Coverage: Europe ({EUROPE_BOUNDS['west']}°W to {EUROPE_BOUNDS['east']}°E, {EUROPE_BOUNDS['south']}°N to {EUROPE_BOUNDS['north']}°N)")
+    print(f"  Coverage: Global ({WORLD_BOUNDS['west']}° to {WORLD_BOUNDS['east']}°, {WORLD_BOUNDS['south']}° to {WORLD_BOUNDS['north']}°)")
+    print(f"  Output resolution: {TARGET_RESOLUTION}° (downsampled from native 0.25°)")
     print(f"  Pressure levels: {len(ALL_PRESSURE_LEVELS)} (1000 hPa to 0.01 hPa)")
     print(f"  Altitude range: surface to ~80 km")
     print()
@@ -466,6 +482,7 @@ def main():
             "bin_hash": bin_hash,
             "altitude_grid": {
                 **result,
+                "grid_resolution_deg": TARGET_RESOLUTION,
                 "data_file": "wind.bin",
                 "data_length": len(wind_u),
                 "data_type": "int16",
