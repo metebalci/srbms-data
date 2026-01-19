@@ -402,13 +402,16 @@ def fetch_gfs_wind() -> Optional[dict]:
         speed = np.sqrt(u_data**2 + v_data**2)
         print(f"    Wind speed: {speed.min():.1f} - {speed.max():.1f} m/s", flush=True)
 
-    # Compute bounds from actual extracted data (WGS84)
-    lat_south = min(lats[0], lats[-1])
-    lat_north = max(lats[0], lats[-1])
-    lon_west = min(lons[0], lons[-1])
-    lon_east = max(lons[0], lons[-1])
+    # Compute bounds as cell centers for the target resolution grid
+    # For a global 1° grid: 360 lon cells centered at -179.5 to 179.5,
+    # 180 lat cells centered at -89.5 to 89.5
+    half_res = TARGET_RESOLUTION / 2
+    lon_west = -180 + half_res   # -179.5 for 1° grid
+    lon_east = 180 - half_res    # 179.5 for 1° grid
+    lat_south = -90 + half_res   # -89.5 for 1° grid
+    lat_north = 90 - half_res    # 89.5 for 1° grid
 
-    print(f"  WGS84 bounds: {lon_west:.2f}° to {lon_east:.2f}°E, {lat_south:.2f}° to {lat_north:.2f}°N", flush=True)
+    print(f"  WGS84 bounds (cell centers): {lon_west:.2f}° to {lon_east:.2f}°E, {lat_south:.2f}° to {lat_north:.2f}°N", flush=True)
 
     return {
         "forecast_time": target_time,
